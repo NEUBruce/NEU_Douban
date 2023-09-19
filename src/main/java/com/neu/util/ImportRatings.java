@@ -54,7 +54,7 @@ public class ImportRatings {
 
 
 	public static void insertRatings(List<Rating> ratings) {
-		Connection conn = DBUtil.getJDBCConnection();
+		Connection conn = SqlSessionFactoryUtils.getJDBCConnection();
 		PreparedStatement ps = null;
 		String sql = "insert into " + TABLE_NAME + " ( " + USER_ID_COLUMN
 				+ ", " + MOVIE_ID_COLUMN + ", " + RATING + ", " + TIMESTAMP

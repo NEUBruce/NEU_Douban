@@ -42,7 +42,7 @@ public class ImportMovies {
 	}
 
 	private static void persist(List<Movie> movies) {
-		Connection conn = DBUtil.getJDBCConnection();
+		Connection conn = SqlSessionFactoryUtils.getJDBCConnection();
 		PreparedStatement ps = null;
 		String sql = "insert into " + TABLE_NAME + " ( " + ID_COLUMN + ", "
 				+ NAME_COLUMN + ", " + PUBLISHED_YEAR_COLUMN + ", "
