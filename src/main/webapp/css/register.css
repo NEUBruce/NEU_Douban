@@ -69,21 +69,40 @@ body {
 
 .form-group label {
     font-weight: bold;
-    flex-basis: 30%;
+    /*flex-basis: 30%;*/
     margin-right: 10px;
+    flex: 1;
 }
 
-.form-group input {
+.form-group input[type="input"] {
     width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s;
+
+}
+/* Style the radio input */
+.form-group input[type="radio"] {
+    margin-right: 5px; /* Add a small margin between the radio input and label */
 }
 
+/* Style the radio label */
+.form-group label {
+    margin: 0; /* Remove default label margin */
+}
+
+.form-group select{
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
 .form-group input:focus {
     border-color: #007BFF;
 }
+
 
 .btn-container {
     width: 100%;
