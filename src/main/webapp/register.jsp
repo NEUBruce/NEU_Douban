@@ -16,24 +16,36 @@
     <h2>Register</h2>
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" id="username" placeholder="Please input your username">
+      <input type="input" id="username" placeholder="Please input your username">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="Please input your password">
+      <input type="input" id="password" placeholder="Please input your password">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password-confirm" placeholder="Please confirm your password">
+      <input type="input" id="password-confirm" placeholder="Please confirm your password">
     </div>
     <div class="form-group">
-      <label for="gender">Gender:</label>
-      <select type="gender" id="gender">
-        <option id="Male">Male</option>
-        <option id="Female">Female</option>
+      <label for="male">Gender:</label>
+      <input type="radio" id="male" name="gender" value="male" ${gender == 'female' ? '' : 'checked'}>
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" ${gender == 'female' ? 'checked' : ''}>
+      <label for="female">Female</label>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="input" id="age" placeholder="Please input your age">
+    </div>
+    <div class="form-group">
+      <label for="vocation">Vocation:</label>
+      <select id="vocation">
+        <option id="1">1</option>
+        <option id="2">2</option>
+        <option id="3">3</option>
+        <option id="4">4</option>
       </select>
     </div>
-
     <div class="btn-container">
       <button class="btn" onclick="">Confirm</button>
     </div>
