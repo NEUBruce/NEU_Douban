@@ -1,20 +1,54 @@
 body {
-    font-family: "Microsoft YaHei UI", sans-serif;
-    background-color: #f4f4f4;
+    font-family: "宋体", Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+    background-image: url("../image/background.jpg"); /* 设置背景图片的URL */
+    background-color: rgba(255, 255, 255, 0.6); /* 设置半透明白色背景 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-container {
+    order: 2; /* 设置内容容器在标题下方 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* 添加上方间距 */
+    flex-direction: column;
+    width: 100%;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #1fffaa;
+    padding: 20px 0;
+    font-size: 50px;
+    font-weight: bold;
+    width: 100%; /* 让标题横向充满页面 */
+    order: 1; /* 设置标题在页面最上方 */
 }
 
 .login-container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     text-align: center;
+    max-width: 600px; /* 调整最大宽度 */
+    width: 100%; /* 让登录框宽度充满父容器 */
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-container h2 {
@@ -22,30 +56,54 @@ body {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-group label {
-    display: block;
     font-weight: bold;
+    flex-basis: 30%;
+    text-align: left;
 }
 
 .form-group input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007BFF;
 }
 
 .btn-container {
-    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .btn {
-    padding: 10px 20px;
-    background-color: #007BFF;
+    padding: 12px 30px;
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1e7e34;
+}
+
+.register-btn {
+    background-color: #28a745;
+}
+
+.register-btn:hover {
+    background-color: #1e7e34;
 }
