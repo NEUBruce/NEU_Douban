@@ -1,7 +1,7 @@
 package com.neu.pojo;
 
 public class User {
-    private Integer userId;
+    private String userId;
     private String username;
 
     private String password;
@@ -14,7 +14,7 @@ public class User {
 
     private Integer age;
 
-    public User(Integer userId, String username, String password, String gender, String vocation, String zipCode, Integer age) {
+    public User(String userId, String username, String password, String gender, String vocation, String zipCode, Integer age) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -24,11 +24,11 @@ public class User {
         this.age = age;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
