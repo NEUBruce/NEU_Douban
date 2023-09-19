@@ -1,5 +1,5 @@
 
-package com.rcd.util;
+package com.neu.util;
 
 import java.sql.*;
 

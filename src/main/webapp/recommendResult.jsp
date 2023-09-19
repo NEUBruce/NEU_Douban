@@ -1,5 +1,5 @@
-<%@ page language="java" import="java.util.*,com.rcd.javabean.*" pageEncoding="UTF-8"%>
-<%@ page import="com.rcd.model.entity.MovieInfo" %>
+<%@ page language="java" import="java.util.*,com.neu.javabean.*" pageEncoding="UTF-8"%>
+<%@ page import="com.neu.pojo.MovieInfo" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

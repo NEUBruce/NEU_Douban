@@ -1,7 +1,7 @@
 /**
  * movie的javabean
  */
-package com.rcd.model.entity;
+package com.neu.pojo;
 
 public class MovieInfo {
 	private String name;

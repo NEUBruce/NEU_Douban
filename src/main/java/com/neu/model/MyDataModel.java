@@ -1,4 +1,4 @@
-package com.rcd.model;
+package com.neu.model;
 
 import org.apache.mahout.cf.taste.impl.model.jdbc.ConnectionPoolDataSource;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;

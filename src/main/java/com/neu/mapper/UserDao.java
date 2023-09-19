@@ -1,4 +1,4 @@
-package com.rcd.dao;
+package com.neu.mapper;
 
 public class UserDao {
     //登录功能

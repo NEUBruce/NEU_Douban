@@ -1,4 +1,4 @@
-package com.rcd.model.entity;
+package com.neu.pojo;
 
 public class Rating {
 	private int user_id;

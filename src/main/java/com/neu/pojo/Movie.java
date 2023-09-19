@@ -1,7 +1,6 @@
-package com.rcd.model.entity;
+package com.neu.pojo;
 
-import com.rcd.im.util.*;
-import com.rcd.util.StringUtil;
+import com.neu.util.StringUtil;
 
 import java.util.List;
 import java.util.regex.Matcher;

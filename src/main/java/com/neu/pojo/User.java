@@ -1,4 +1,4 @@
-package com.rcd.javabean;
+package com.neu.pojo;
 
 public class User {
     private Integer userId;

@@ -66,8 +66,6 @@
       <version>0.8</version>
     </dependency>
 
-
-
   </dependencies>
   <build>
     <finalName>NEU_Douban</finalName>
