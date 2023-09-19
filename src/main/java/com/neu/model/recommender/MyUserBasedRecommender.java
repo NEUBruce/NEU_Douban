@@ -1,5 +1,6 @@
-package com.rcd.model.recommender;
+package com.neu.model.recommender;
 
+import com.neu.model.MyDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.*;
 import org.apache.mahout.cf.taste.impl.recommender.*;
 import org.apache.mahout.cf.taste.impl.similarity.*;
@@ -7,8 +8,6 @@ import org.apache.mahout.cf.taste.model.*;
 import org.apache.mahout.cf.taste.neighborhood.*;
 import org.apache.mahout.cf.taste.recommender.*;
 import org.apache.mahout.cf.taste.similarity.*;
-
-import com.rcd.model.MyDataModel;
 
 import java.util.*;
 

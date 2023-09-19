@@ -1,13 +1,13 @@
 /**
  * 获得电影的信息
  */
-package com.rcd.model;
+package com.neu.model;
 
 import java.sql.*;
 import java.util.*;
 
-import com.rcd.model.entity.MovieInfo;
-import com.rcd.util.ConnectToMySQL;
+import com.neu.pojo.MovieInfo;
+import com.neu.util.ConnectToMySQL;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 
 public class GetMovieInfo {

@@ -1,4 +1,4 @@
-package com.rcd.model.recommender;
+package com.neu.model.recommender;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package com.rcd.util;
+package com.neu.util;
+
+import com.neu.pojo.Rating;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.rcd.model.entity.Rating;
 
 public class ImportRatings {
 

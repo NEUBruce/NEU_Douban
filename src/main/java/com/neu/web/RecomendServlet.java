@@ -1,4 +1,4 @@
-package com.rcd.web;
+package com.neu.web;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.neu.model.recommender.MyItemBasedRecommender;
+import com.neu.model.recommender.MySlopeOneRecommender;
+import com.neu.model.recommender.MyUserBasedRecommender;
+import com.neu.pojo.MovieInfo;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 
-import com.rcd.model.entity.MovieInfo;
-import com.rcd.model.GetMovieInfo;
-import com.rcd.model.recommender.MyItemBasedRecommender;
-import com.rcd.model.recommender.MySlopeOneRecommender;
-import com.rcd.model.recommender.MyUserBasedRecommender;
+import com.neu.model.GetMovieInfo;
 
 public class RecomendServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)

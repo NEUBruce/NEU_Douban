@@ -1,4 +1,4 @@
-package com.rcd.util;
+package com.neu.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.rcd.model.entity.Movie;
+import com.neu.pojo.Movie;
 
 public class ImportMovies {
 	public final static String TABLE_NAME = "movies";
