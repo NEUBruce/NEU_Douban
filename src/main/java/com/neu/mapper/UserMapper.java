@@ -16,10 +16,11 @@ public interface UserMapper {
     int insertUser(User user);
 
     //根据id删除用户信息
-    int deleteUserById(User user);
+    int deleteUserByName(User user);
 
     //编辑用户信息
     int modifyUser(User user);
 
-     int login(User user);
+    //登录
+    int login(User user);
 }

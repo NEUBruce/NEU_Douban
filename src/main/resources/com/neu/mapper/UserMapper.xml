@@ -29,8 +29,8 @@
         update user set id=#{user_id}, userName=#{username}, password=#{password},gender=#{gender},vocation=#{vocation}, zip_code=#{zipCode},age=#{age}
     </update>
 
-    <delete id="deleteUserById">
-        delete from user where id=#{userId}
+    <delete id="deleteUserByName">
+        delete from user where username=#{username}
     </delete>
 
     <select id="login" resultMap="userResultMap">
