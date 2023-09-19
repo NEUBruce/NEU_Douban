@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="header">
-    Movie recommendation
+    Movie Recommendation
 </div>
 <div class="content-container">
     <div class="login-container">
@@ -23,8 +23,8 @@
             <input type="password" id="password" placeholder="Please input your password">
         </div>
         <div class="btn-container">
-            <button class="btn" onclick="login()">Login</button>
-            <button class="btn" onclick="register()">Register</button>
+            <button class="btn1" onclick="login()">Login</button>
+            <button class="btn2" onclick="register()">Register</button>
         </div>
     </div>
 </div>

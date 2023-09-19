@@ -8,8 +8,8 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-image: url("../image/background1.jpg"); /* 设置背景图片的URL */
-    background-color: rgba(255, 255, 255, 0.6); /* 设置半透明白色背景 */
+    /*background-image: url("../image/background1.jpg"); !* 设置背景图片的URL *!*/
+    /*background-color: rgba(255, 255, 255, 0.6); !* 设置半透明白色背景 *!*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,23 +19,23 @@ body {
     order: 2; /* 设置内容容器在标题下方 */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     margin-top: 20px; /* 添加上方间距 */
-    margin-right: 70px;
+    margin-left: 20px;
     flex-direction: column;
     width: 100%;
+    align-self: center;
 }
 
 .header {
     font-family: "华文新魏";
     position: absolute;
     top: 80px;
-    text-align: right;
+    text-align: center;
     color: rgb(31, 185, 206);
     padding: 20px 0;
     font-size: 50px;
     font-weight: bolder;
-    margin-right: 200px;
     width: 100%; /* 让标题横向充满页面 */
     order: 1; /* 设置标题在页面最上方 */
 }
@@ -44,15 +44,15 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     padding: 40px 0px 40px 0px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     max-width: 500px; /* 调整最大宽度 */
     width: 100%; /* 让登录框宽度充满父容器 */
-    margin-right: 80px;
+    /*margin-right: 80px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    float: right;
+    align-self: center;
 }
 
 .login-container h2 {
@@ -65,7 +65,6 @@ body {
     width: 100%;
     margin-bottom: 20px;
     justify-content: space-between;
-
 }
 
 .form-group label {
@@ -92,8 +91,8 @@ body {
     justify-content: right;
 }
 
-.btn1 {
-    padding: 12px 5px;
+.btn {
+    padding: 12px 10px;
     background-color: rgb(31, 185, 206);
     color: #fff;
     border: none;
@@ -103,26 +102,14 @@ body {
     alignment: right;
     width: 100px;
     box-sizing: border-box;
-    margin-right: 10px;
-}
-.btn2 {
-    padding: 12px 5px;
-    background-color: rgb(31, 185, 206);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    alignment: right;
-    width: 100px;
-    box-sizing: border-box;
-    margin-right: 50px;
+    margin-right: 30px;
 }
 
-.btn1:hover {
+
+.btn:hover {
     background-color: #1e7e34;
 }
-.btn2:hover {
+.btn:hover {
     background-color: #1e7e34;
 }
 .register-btn {
