@@ -3,7 +3,7 @@ package com.rcd.model;
 import org.apache.mahout.cf.taste.impl.model.jdbc.ConnectionPoolDataSource;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;
 import org.apache.mahout.cf.taste.model.JDBCDataModel;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class MyDataModel {
 
@@ -19,7 +19,7 @@ public class MyDataModel {
 
             ConnectionPoolDataSource connectionPool=new ConnectionPoolDataSource(dataSource);
             // use JNDI
-            dataModel = new MySQLJDBCDataModel(connectionPool,"movie_preferences", "userID", "movieID","preference");
+            dataModel = new MySQLJDBCDataModel(connectionPool,"movie_preferences", "userID", "movieID","preference", null);
 
 
         } catch (Exception e) {
