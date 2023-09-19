@@ -1,29 +1,31 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
+<head>
+    <link rel="stylesheet" href="./css/index.css"/>
     <title>电影推荐</title>
-            <style type="text/css">  
-            body{background: url(image/p2969.jpg) no-repeat;background-size:cover;font-size: 16px;}        
-        </style>  
-  </head>
-  
-  <body>
-    <center>
+</head>
+
+<body>
+<div class="container">
+    <h1 style="text-align: center;">电影推荐</h1>
     <form action="RecomendServlet" method="post">
-    <table border="0">
-    <tr><td align="right">用户ID</td><td align="left"><input type="text" name="userID"></td></tr>
-    <tr><td align="right">推荐数目</td><td align="left"><input type="text" name="size" value="25"></td></tr>
-    <tr><td colspan="2" align="center">
-    <input type="radio" name="recommendType" checked="checked" value="userBased">User Based
-    <input type="radio" name="recommendType" value="itemBased">Item Based
-    <input type="radio" name="recommendType" value="slopeOne">Slope One
-    </td></tr>
-    <tr><td colspan="2" align="center"><input type="submit" value="提交"></td></tr>
-   
-    </table>
+        <label for="userID">用户ID</label>
+        <input type="text" name="userID" id="userID">
+
+        <label for="size">推荐数目</label>
+        <input type="text" name="size" id="size" value="25">
+
+        <label>推荐类型</label>
+        <input type="radio" name="recommendType" checked="checked" value="userBased"> User Based
+        <input type="radio" name="recommendType" value="itemBased"> Item Based
+        <input type="radio" name="recommendType" value="slopeOne"> Slope One
+
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="submit" value="提交">
+        </div>
     </form>
-    </center>
-  </body>
+</div>
+</body>
 </html>
