@@ -9,35 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57a8887e-9221-422a-b041-ccf2689f0605" name="Changes" comment="fix login page font bug">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neu/mapper/MovieMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neu/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+    <list default="true" id="57a8887e-9221-422a-b041-ccf2689f0605" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/mapper/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/javabean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/javabean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/GetMovieInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/GetMovieInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/MyDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/MyDataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/entity/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/pojo/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/entity/MovieInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/pojo/MovieInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/entity/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/pojo/Rating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/recommender/MyItemBasedRecommender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/recommender/MyItemBasedRecommender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/recommender/MySlopeOneRecommender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/recommender/MySlopeOneRecommender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/recommender/MyUserBasedRecommender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/recommender/MyUserBasedRecommender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/model/recommender/RecommenderIntro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/model/recommender/RecommenderIntro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/ConnectToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/ConnectToMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/DBUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/DataBaseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/DataBaseUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/ImportMovies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/ImportMovies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/ImportRatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/ImportRatings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rcd/web/RecomendServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/web/RecomendServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/recommendResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/recommendResult.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neu/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neu/pojo/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695023472258</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="set up mybatis">
+      <created>1695120186462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695120186462</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +207,7 @@
     <MESSAGE value="init an empty project" />
     <MESSAGE value="add some original project files" />
     <MESSAGE value="add some web resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some web resources" />
+    <MESSAGE value="set up mybatis" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up mybatis" />
   </component>
 </project>
