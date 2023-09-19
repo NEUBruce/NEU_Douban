@@ -10,7 +10,7 @@ public interface UserMapper {
     List<User> selectAllUser();
 
     //查询用户
-    List<User> selectAUser(User user);
+    User selectUserById(User user);
 
     //创建用户基本信息
     int insertUser(User user);
@@ -21,5 +21,5 @@ public interface UserMapper {
     //编辑用户信息
     int modifyUser(User user);
 
-
+     int login(User user);
 }

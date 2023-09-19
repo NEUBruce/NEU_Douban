@@ -2,46 +2,48 @@ package com.neu.service;
 
 import com.neu.mapper.UserMapper;
 import com.neu.pojo.User;
+import com.neu.util.SqlSessionFactoryUtils;
 import com.neu.util.UUIDUtil;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import java.util.List;
 
 public class UserService {
 
-    private UserMapper userMapper ;
+    private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
-    List<User> selectAllUser(){
-        List<User> result=userMapper.selectAllUser();
-
-        return result;
+    public List<User> selectAllUser() {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        List<User> userList = mapper.selectAllUser();
+        sqlSession.close();
+        return userList;
     }
 
-    //登录
-    public List<User> selectAUser(User user){
-        List<User> result=userMapper.selectAUser(user);
-
-        return result;
+    public User selectUserById(User user){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.selectUserById(user);
     }
 
-    //创建用户
     public int insertUser(User user){
-        user.setUserId(UUIDUtil.getOneUUID());
-        int result=userMapper.insertUser(user);
-
-        return result;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.insertUser(user);
     }
 
-    //修改用户
     public int modifyUser(User user){
-        int result=userMapper.modifyUser(user);
-
-        return result;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.modifyUser(user);
     }
 
     //删除用户
     public int deleteUserById(User user){
-        int result=userMapper.deleteUserById(user);
-
-        return result;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.deleteUserById(user);
     }
 
 }
