@@ -6,10 +6,9 @@ package com.rcd.model;
 import java.sql.*;
 import java.util.*;
 
+import com.rcd.model.entity.MovieInfo;
+import com.rcd.util.ConnectToMySQL;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
-
-import com.rcd.javabean.*;
-import com.rcd.conn.*;
 
 public class GetMovieInfo {
 	private Connection conn = null;

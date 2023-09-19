@@ -1,4 +1,4 @@
-package com.rcd.javabean;
+package com.rcd.model.entity;
 
 public class Rating {
 	private int user_id;

@@ -1,4 +1,4 @@
-package com.rcd.im.info;
+package com.rcd.util;
 
 import java.util.Collection;
 

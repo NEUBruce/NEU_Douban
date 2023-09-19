@@ -1,6 +1,8 @@
-package com.rcd.javabean;
+package com.rcd.model.entity;
 
-import com.rcd.im.info.*;
+import com.rcd.im.util.*;
+import com.rcd.util.StringUtil;
+
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,5 +1,5 @@
 
-package com.rcd.conn;
+package com.rcd.util;
 
 import java.sql.*;
 

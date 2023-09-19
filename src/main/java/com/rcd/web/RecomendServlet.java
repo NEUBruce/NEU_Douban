@@ -1,4 +1,4 @@
-package com.rcd.servlet;
+package com.rcd.web;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 
-import com.rcd.javabean.MovieInfo;
+import com.rcd.model.entity.MovieInfo;
 import com.rcd.model.GetMovieInfo;
 import com.rcd.model.recommender.MyItemBasedRecommender;
 import com.rcd.model.recommender.MySlopeOneRecommender;
