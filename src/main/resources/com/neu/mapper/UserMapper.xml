@@ -17,5 +17,24 @@
         select * from user
     </select>
 
+    <select id="selectUserById" resultMap="userResultMap" parameterType="com.neu.pojo.User">
+        select * from user where id=#{userId}
+    </select>
+
+    <insert id="insertUser" parameterType="com.neu.pojo.User">
+        insert into user values(#{userId}, #{username}, #{password}, #{gender}, #{vocation},#{zipCode},#{age})
+    </insert>
+
+    <update id="modifyUser">
+        update user set id=#{user_id}, userName=#{username}, password=#{password},gender=#{gender},vocation=#{vocation}, zip_code=#{zipCode},age=#{age}
+    </update>
+
+    <delete id="deleteUserById">
+        delete from user where id=#{userId}
+    </delete>
+
+    <select id="login" resultMap="userResultMap">
+        select * from user where username=#{username}
+    </select>
 
 </mapper>

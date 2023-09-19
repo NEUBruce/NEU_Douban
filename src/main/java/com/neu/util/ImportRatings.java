@@ -25,7 +25,7 @@ public class ImportRatings {
 	public static void main(String[] args) {
 		try {
 			LineNumberReader lineReader = new LineNumberReader(new FileReader(
-					"movielens/ratings.dat"));
+					"src/main/webapp/movielens/ratings.dat"));
 			String line = "";
 			List<Rating> ratingList = new ArrayList<Rating>();
 			while ((line = lineReader.readLine()) != null) {
