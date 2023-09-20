@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="login.jsp">Home</a>
+        <input type="text" id="search" placeholder="Please input search key world">
+        <div class="dropdown">
+            <button class="dropbtn">Projects
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+            </div>
+        </div>
+    </div>
+   <div id="content-container">
+    <h2>Movies Recommended</h2>
+    <div id="movie-container" class="movie-container">
+        <div id="movies">
+            <img src="image/movie1.jpg" class="movie" id="movie-poster-1" alt="电影海报 1">
+            <img src="image/movie2.jpg" class="movie" id="movie-poster-2" alt="电影海报 2">
+            <img src="image/movie2.jpg" class="movie" id="movie-poster-3" alt="电影海报 3">
+            <img src="image/movie2.jpg" class="movie" id="movie-poster-4" alt="电影海报 4">
+            <img src="image/movie2.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
+        </div>
+        <div id="button-container">
+            <img src="image/update.jpg" id="next">
+            <button id="next-button">换一批</button>
+        </div>
+    </div>
+
+   </div>
+</body>
+</html>
