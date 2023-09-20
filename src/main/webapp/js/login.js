@@ -4,13 +4,12 @@ function login() {
 
     // 在这里可以添加登录逻辑，例如发送请求到服务器验证用户名和密码
     $.ajax({
-        url: "http://localhost:8080/login",
+        url: "http://localhost:80/login",
         method: "post",
         data: {
             username: username,
             password: password
         },
-        dataType: "json",
         success: (data)=>{
             let user = JSON.parse(data)
             if (user === null) {
@@ -21,8 +20,6 @@ function login() {
 
         }
     })
-
-    alert("登录成功！"); // 仅作为示例
 }
 
 function register() {
