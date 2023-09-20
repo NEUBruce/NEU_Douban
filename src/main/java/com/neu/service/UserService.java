@@ -40,10 +40,10 @@ public class UserService {
     }
 
     //删除用户
-    public int deleteUserById(User user){
+    public int deleteUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        return mapper.deleteUserById(user);
+        return mapper.deleteUserByName(user);
     }
 
 }
