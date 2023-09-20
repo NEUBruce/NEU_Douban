@@ -126,5 +126,19 @@ footer {
     margin-top: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    /*border-top-right-radius: 5px; !* 圆化左上角 *!*/
+    /*border-bottom-right-radius: 5px; !* 圆化左下角 *!*/
     transition: border-color 0.3s;
 }
+
+/*#search-image{*/
+/*    !*background-size: contain; !* 根据按钮大小自适应背景图片尺寸 *!*!*/
+/*    !*background-repeat: no-repeat; !* 防止图片重复平铺 *!*!*/
+/*    !*background-color: #fff;*!*/
+/*    margin-top: 8px;*/
+/*    margin-left: 300px;*/
+/*    height: 30px;*/
+/*    width: 30px;*/
+/*    border-top-left-radius: 5px; !* 圆化左上角 *!*/
+/*    border-bottom-left-radius: 5px; !* 圆化左下角 *!*/
+/*}*/
