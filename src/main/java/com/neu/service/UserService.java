@@ -21,10 +21,10 @@ public class UserService {
         return userList;
     }
 
-    public User selectUserById(User user){
+    public User selectUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        return mapper.selectUserById(user);
+        return mapper.selectUserByName(user);
     }
 
     public int insertUser(User user){
