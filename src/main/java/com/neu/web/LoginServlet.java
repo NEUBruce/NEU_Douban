@@ -46,6 +46,8 @@ public class LoginServlet extends HttpServlet {
             String username = jsonNode.get("username").asText();
             String password = jsonNode.get("password").asText();
 
+            System.out.println(password);
+            System.out.println(username);
             // 创建User对象
             User user = new User();
             user.setUsername(username);
@@ -59,6 +61,7 @@ public class LoginServlet extends HttpServlet {
                 response.getWriter().write(objectMapper.writeValueAsString("登录成功"));
             } else {
                 // 登录失败
+                System.out.println("登录失败");
                 response.getWriter().write(objectMapper.writeValueAsString("登录失败"));
             }
         } catch (Exception e) {
