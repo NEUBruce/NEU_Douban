@@ -1,0 +1,153 @@
+#content-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#content-container h2{
+    color: #636363;
+}
+.movie-container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 40px 0px 40px 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 1100px; /* 调整最大宽度 */
+
+    /*margin-left: 100px;*/
+    display: flex;
+    flex-direction:column;
+    align-items: flex-end;
+    align-self: center;
+}
+
+
+#movies{
+    flex-direction: row;
+    width: 100%;
+}
+.movie{
+    height: 210px;
+    width: 150px;
+    margin: 10px 20px 10px 20px;
+    flex: 1;
+}
+
+#btn-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    /*justify-content: ;*/
+    text-align: right;
+    margin-top: 20px;
+    bottom: 10px; /* 调整按钮距离底部的距离 */
+    right: 100px;
+}
+
+#movie-next {
+    padding: 1px 1px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(127, 127, 127);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /*alignment: right;*/
+    width: 50px;
+    box-sizing: border-box;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+
+#next-image{
+    height: 12px;
+    width: 12px;
+    margin: 0px;
+}
+
+#movies:hover .movie{
+    filter: blur(5px);
+}
+#movies .movie:hover{
+    filter: blur(0px);
+    opacity: 1;
+}
+
+/*friend*/
+.previous-button,.next-button {
+
+    background-size: contain; /* 根据按钮大小自适应背景图片尺寸 */
+    background-repeat: no-repeat; /* 防止图片重复平铺 */
+    background-color: transparent;
+    width: 40px;
+    height: 100px;
+    position: relative;
+    border: 0;
+    margin: 0px 20px 0px 20px;
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 10%; !* 调整箭头的水平位置 *!*/
+    /*transform: translate(-50%, -50%) rotate(-45deg); !* 将矩形旋转为箭头形状 *!*/
+    /*width: 12px;*/
+    /*height: 12px;*/
+    /*border-top: 2px solid #fff; !* 设置箭头颜色和粗细 *!*/
+    /*border-left: 2px solid #fff; !* 设置箭头颜色和粗细 *!*/
+}
+.previous-button{
+    background-image: url("../image/previous.jpg");
+}
+.next-button{
+    background-image: url("../image/next.jpg");
+}
+.photo{
+    height: 150px;
+    width: 150px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+.friend-container{
+    /*border: 2px solid #000;*/
+
+    align-items: center;
+    align-self: center;
+    margin-top: 100px;
+    display: flex;
+    margin-left: 80px; /* 让子元素的子元素横向排列，可以根据需要调整对齐方式 */
+    width: 70%;
+    background-color: transparent;
+
+}
+.friends{
+    /*border: 2px solid #000;*/
+    flex-direction: row;
+    display: flex;
+    margin-left: 20px;
+    width: 76%;
+}
+.add-button{
+    background-color: rgb(31, 185, 206);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 60px;
+    height: 30px;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 40px 0px 40px 0px;
+    border-radius: 10px;
+    margin-right: 10px; /* 设置右外边距 */
+    margin-left: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
