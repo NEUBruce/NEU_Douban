@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/login.css">
@@ -13,7 +14,7 @@
 <div class="content-container">
     <div class="login-container">
         <h2>Login</h2>
-        <form>
+        <form action="/login" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" placeholder="Please input your username">

@@ -2,14 +2,16 @@ function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // 在这里可以添加登录逻辑，例如发送请求到服务器验证用户名和密码
+    // 登录逻辑，发送请求到服务器验证用户名和密码
     $.ajax({
-        url: "http://localhost:80/login",
+        url: "http://localhost:8080/login",
         method: "post",
-        data: {
+        data: JSON.stringify({
             username: username,
             password: password
-        },
+        }),
+        contentType: "application/json",
+        dataType: "json",
         success: (data)=>{
             let user = JSON.parse(data)
             if (user === null) {
@@ -20,6 +22,8 @@ function login() {
 
         }
     })
+
+    alert("登录成功！");
 }
 
 function register() {
