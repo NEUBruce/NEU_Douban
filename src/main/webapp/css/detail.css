@@ -1,0 +1,151 @@
+.detail h1{
+    color: #414141;
+}
+.search-container h1{
+    color: #414141;
+}
+.detail h2{
+    /*border: 2px solid #000;*/
+    color: #505050;
+}
+.content-container{
+    display: flex;
+    flex-direction: row;
+}
+.search-container{
+    background-color: rgba(160, 203, 213,0.6);
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center; !* 水平居中对齐 *!*/
+    align-items: center;
+}
+.search-container h1{
+    margin-left: 100px;
+    color: #333333;
+}
+
+.search-text{
+    margin-left: 50px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    /*transition: border-color 0.3s;*/
+    height: 40px;
+    width: 600px;
+}
+.search-text::placeholder {
+    margin-left: 5px;/* 文本居中对齐 */
+
+}
+.search-button{
+    background-image: url("../image/search.jpg");
+    background-color: #818181;
+    height: 42px;
+    width: 42px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 1px solid #ccc;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-size: contain; /* 根据按钮大小自适应背景图片尺寸 */
+    background-repeat: no-repeat; /* 防止图片重复平铺 */
+}
+.movie-photo{
+    /*border: 2px solid #000;*/
+    max-height: 450px;
+    width: auto;
+    margin-left: 100px;
+    margin-top: 70px;
+    margin-right: 100px;
+
+    /* 其他样式 */
+    /*border-right: 20px solid #333; !* 20px 宽度的黑色边框在图像右侧 *!*/
+
+}
+
+.fenge{
+    max-height: 500px;
+    width: auto;
+    margin-top: 60px;
+    margin-right: 120px;
+}
+
+.detail{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-average{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /*margin-right: 10px;*/
+}
+
+
+/*border: 2px solid #000;*/
+/*star*/
+.star-wrapper {
+    font-size: 1.2ee;
+    width: 20em;
+    /*position: absolute;*/
+    /* */
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    padding: 1em 0.8em;
+    box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15);
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.fa-star {
+    /*border: 2px solid #000;*/
+    font-size: 1.5em;
+    color: #ffd700;
+}
+
+.number {
+    display: block;
+    text-align: center;
+}
+#submit {
+    display: block;
+    position: relative;
+    background: linear-gradient(#fe3b5a, #fd7914);
+    border: none;
+    padding: 0.4em 1.2em;
+    color: #ffffff;
+    font-size: 1.2em;
+    border-radius: 2em;
+    margin: 1em auto 0 auto;
+    cursor: pointer;
+}
+#submit:disabled {
+    cursor: not-allowed;
+}
+#message {
+    text-align: center;
+    margin-bottom: 2em;
+}
+#submit-section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    place-items: center;
+    border-radius: 0.5em;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: grid;
+}

@@ -18,7 +18,7 @@
     </select>
 
     <select id="selectUserByName" resultMap="userResultMap" parameterType="com.neu.pojo.User">
-        select * from user where username=#{username}
+        select * from user where username=#{username} and password=#{password}
     </select>
 
     <insert id="insertUser" parameterType="com.neu.pojo.User">
