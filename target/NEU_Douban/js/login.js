@@ -4,7 +4,7 @@ function login() {
 
     // 登录逻辑，发送请求到服务器验证用户名和密码
     $.ajax({
-        url: "http://localhost:8080/login",
+        url: "http://localhost:8889/NEU_Douban_war/login",
         method: "post",
         data: JSON.stringify({
             username: username,
@@ -13,17 +13,11 @@ function login() {
         contentType: "application/json",
         dataType: "json",
         success: (data)=>{
-            let user = JSON.parse(data)
-            if (user === null) {
-                alert("Login in failed!")
-            }else {
-                alert("Succeed!")
-            }
-
+            console.log(data);
+            alert("Succeed!")
+            window.location.href="http://localhost:8889/NEU_Douban_war/index.jsp"
         }
     })
-
-    alert("登录成功！");
 }
 
 function register() {
