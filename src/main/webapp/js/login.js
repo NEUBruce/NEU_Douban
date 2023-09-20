@@ -2,12 +2,24 @@ function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // 在这里可以添加登录逻辑，例如发送请求到服务器验证用户名和密码
-
-    alert("登录成功！"); // 仅作为示例
+    // 登录逻辑，发送请求到服务器验证用户名和密码
+    $.ajax({
+        url: "http://localhost:8889/NEU_Douban_war/login",
+        method: "post",
+        data: JSON.stringify({
+            username: username,
+            password: password
+        }),
+        contentType: "application/json",
+        dataType: "json",
+        success: (data)=>{
+            console.log(data);
+            alert("Succeed!")
+            window.location.href="http://localhost:8889/NEU_Douban_war/index.jsp"
+        }
+    })
 }
 
 function register() {
-    // 在这里可以添加注册逻辑，例如跳转到注册页面
-    alert("跳转到注册页面"); // 仅作为示例
+    window.location.href="register.jsp";
 }

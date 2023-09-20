@@ -34,7 +34,7 @@ public class SqlSessionFactoryUtils {
 		String driverClassName = "com.mysql.jdbc.Driver";
 		String url = "jdbc:mysql://localhost/movie";
 		String username = "root";
-		String password = "*@Abc123";
+		String password = "lg20030408";
 		Connection conn = null;
 		try {
 			Class.forName(driverClassName);
