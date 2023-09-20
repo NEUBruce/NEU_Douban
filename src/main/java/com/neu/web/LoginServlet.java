@@ -4,6 +4,7 @@ import com.neu.pojo.User;
 import com.neu.service.UserService;
 import org.codehaus.jackson.map.ObjectMapper;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,15 +12,22 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    private UserService userService = new UserService();
+
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println(2222);
         doPost(request, response);
     }
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserService userService = new UserService();
+
+        System.out.println(111111111);
         HttpSession session = request.getSession();
         response.setContentType("application/json");
         ObjectMapper objectMapper = new ObjectMapper();

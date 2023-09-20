@@ -7,10 +7,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Movie {
-	public static final String ID = "id";
-	public static final String NAME = "name";
-	public static final String YEAR = "publish_year";
-	public static final String TYPE = "type";
 	private int id;
 	private String name;
 	private String year;
