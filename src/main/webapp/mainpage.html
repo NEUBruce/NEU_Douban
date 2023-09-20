@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="login.jsp">Home</a>
+        <a href="login.html">Home</a>
+<!--        <img src="image/search.jpg" id="search-image"></img>-->
         <input type="text" id="search" placeholder="Please input search key world">
         <div class="dropdown">
             <button class="dropbtn">Projects
@@ -30,8 +31,34 @@
             <img src="image/movie2.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
         </div>
         <div id="button-container">
-            <img src="image/update.jpg" id="next">
-            <button id="next-button">换一批</button>
+            <img src="image/update.jpg" id="next-image">
+            <button id="movie-next">换一批</button>
+        </div>
+    </div>
+    <div id="friend-container" class="friend-container">
+        <div clss="button-container">
+            <button id="previous" class="previous-button"></button>
+        </div>
+        <div id="friends" class="friends">
+            <div class="box">
+                <img src="image/person1.jpg" class="photo"></img>
+                <button class="add-button">Add</button>
+            </div>
+            <div class="box">
+                <img src="image/person2.jpg" class="photo"></img>
+                <button class="add-button">Add</button>
+            </div>
+            <div class="box">
+                <img src="image/person2.jpg" class="photo"></img>
+                <button class="add-button">Add</button>
+            </div>
+            <div class="box">
+                <img src="image/person2.jpg" class="photo"></img>
+                <button class="add-button">Add</button>
+            </div>
+        </div>
+        <div clss="button-container">
+            <button id="next" class="next-button"></button>
         </div>
     </div>
 
