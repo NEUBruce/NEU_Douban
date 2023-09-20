@@ -44,4 +44,10 @@ public class MovieService {
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
         return mapper.deleteMovieById(movie);
     }
+
+    public List<Movie> searchMovie(String searchMessage){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        return mapper.searchMovie(searchMessage);
+    }
 }

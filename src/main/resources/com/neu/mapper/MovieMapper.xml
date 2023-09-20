@@ -30,5 +30,16 @@
         select * from movies where id = #{id}
     </select>
 
+    <select id="searchMovie" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
+        select * from movie
+        <where>
+            <if test="searchMessage != null and searchMessage != ''">
+                and name like concat('%', #{searchMessage}, '%')
+                or published_year like concat('%', #{searchMessage}, '%')
+                or type like concat('%', #{searchMessage}, '%')
+                or rate like concat('%', #{searchMessage}, '%')
+            </if>
+        </where>
+    </select>
 
 </mapper>
