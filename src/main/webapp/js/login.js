@@ -8,6 +8,5 @@ function login() {
 }
 
 function register() {
-    // 在这里可以添加注册逻辑，例如跳转到注册页面
-    alert("跳转到注册页面"); // 仅作为示例
+    window.location.href="register.jsp";
 }
