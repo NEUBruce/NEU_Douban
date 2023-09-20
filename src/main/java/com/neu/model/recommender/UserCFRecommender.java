@@ -1,6 +1,6 @@
 package com.neu.model.recommender;
 
-import com.neu.model.PreferencreDataModel;
+import com.neu.util.PreferencreDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.*;
 import org.apache.mahout.cf.taste.impl.recommender.*;
 import org.apache.mahout.cf.taste.impl.similarity.*;
