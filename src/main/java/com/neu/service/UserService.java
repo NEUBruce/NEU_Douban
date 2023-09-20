@@ -24,18 +24,21 @@ public class UserService {
     public User selectUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
         return mapper.selectUserByName(user);
     }
 
     public int insertUser(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
         return mapper.insertUser(user);
     }
 
     public int modifyUser(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
         return mapper.modifyUser(user);
     }
 
@@ -43,6 +46,7 @@ public class UserService {
     public int deleteUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
         return mapper.deleteUserByName(user);
     }
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.mapper.RatingMapper">
+    <!--    无法识别时使用ResultMap-->
+    <resultMap id="movieResultMap" type="com.neu.pojo.Rating">
+        <result column="userID" property="user_id"/>
+        <result column="movieID" property="movie_id"/>
+        <result column="preference" property="rating"/>
+        <result column="timestamp" property="timestamp"/>
+    </resultMap>
+
+    <insert id="addRating" parameterType="com.neu.pojo.Rating">
+        insert into movie_preference values(#{user_id}, #{movie_id}, #{rating},#{timestamp})
+    </insert>
+
+</mapper>
