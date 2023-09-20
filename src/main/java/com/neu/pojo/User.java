@@ -1,5 +1,7 @@
 package com.neu.pojo;
 
+import java.util.List;
+
 public class User {
     private String userId;
     private String username;
@@ -14,7 +16,9 @@ public class User {
 
     private Integer age;
 
-    public User(String userId, String username, String password, String gender, String vocation, String zipCode, Integer age) {
+    private List<User> friends;
+
+    public User(String userId, String username, String password, String gender, String vocation, String zipCode, Integer age, List<User> friends) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -22,6 +26,7 @@ public class User {
         this.vocation = vocation;
         this.zipCode = zipCode;
         this.age = age;
+        this.friends = friends;
     }
 
     public User() {
@@ -83,6 +88,14 @@ public class User {
         this.age = age;
     }
 
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -93,6 +106,7 @@ public class User {
                 ", vocation='" + vocation + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", age=" + age +
+                ", friends=" + friends +
                 '}';
     }
 }

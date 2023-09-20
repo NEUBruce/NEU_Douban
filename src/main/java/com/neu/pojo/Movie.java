@@ -12,14 +12,36 @@ public class Movie {
 	private String year;
 	private List<String> type;
 
+	private String typeInfo;
+
+	private double rate;
+
 	public Movie() {
 	}
 
-	public Movie(int id, String name, String year, List<String> type) {
+	public Movie(int id, String name, String year, List<String> type, String typeInfo, double rate) {
 		this.id = id;
 		this.name = name;
 		this.year = year;
 		this.type = type;
+		this.typeInfo = typeInfo;
+		this.rate = rate;
+	}
+
+	public String getTypeInfo() {
+		return typeInfo;
+	}
+
+	public void setTypeInfo(String typeInfo) {
+		this.typeInfo = typeInfo;
+	}
+
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
 	}
 
 	public int getId() {
@@ -75,13 +97,4 @@ public class Movie {
 		return sb.toString();
 	}
 
-	public String toJSON() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("{\"id\":" + this.id + ", ");
-		sb.append("\"name\":\"" + this.name + "\", ");
-		sb.append("\"publish_year\":\"" + this.year + "\", ");
-		sb.append("\"type\":\"" + StringUtil.connectString(this.type, " ")
-				+ "\"}");
-		return sb.toString();
-	}
 }

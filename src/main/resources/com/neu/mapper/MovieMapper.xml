@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.mapper.MovieMapper">
+    <!--    无法识别时使用ResultMap-->
+    <resultMap id="movieResultMap" type="com.neu.pojo.Movie">
+        <result column="type" property="typeInfo"></result>
+    </resultMap>
+    <insert id="addMovie">
+        insert into movies values(#{id}, #{name}, #{publishedYear}, #{typeInfo}, #{rate})
+    </insert>
+    <update id="modifyMovie">
+        update movies
+        <set>
+            name=#{name}, published_year=#{publishedYear}, type=#{typeInfo}, rate=#{rate}
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <delete id="deleteMovieById">
+        delete from movies where id = #{id}
+    </delete>
+
+    <select id="selectAllMovie" resultType="com.neu.pojo.Movie">
+        select * from movies
+    </select>
+    <select id="selectMovieById" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
+        select * from movies where id = #{id}
+    </select>
+
+
+</mapper>
