@@ -63,8 +63,8 @@ public class ImportRatings {
 			ps = conn.prepareStatement(sql);
 
 			for (Rating rating : ratings) {
-				ps.setInt(1, rating.getUserId());
-				ps.setInt(2, rating.getMovieId());
+				ps.setLong(1, rating.getUserId());
+				ps.setLong(2, rating.getMovieId());
 				ps.setInt(3, rating.getRating());
 				ps.setInt(4, rating.getTimestamp());
 				ps.addBatch();

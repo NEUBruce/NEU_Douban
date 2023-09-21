@@ -23,15 +23,15 @@
         delete from movies where id = #{id}
     </delete>
 
-    <select id="selectAllMovie" resultType="com.neu.pojo.Movie">
+    <select id="selectAllMovie" resultMap="movieResultMap">
         select * from movies
     </select>
-    <select id="selectMovieById" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
+    <select id="selectMovieById" resultMap="movieResultMap">
         select * from movies where id = #{id}
     </select>
 
-    <select id="searchMovie" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
-        select * from movie
+    <select id="searchMovie" resultMap="movieResultMap">
+        select * from movies
         <where>
             <if test="searchMessage != null and searchMessage != ''">
                 and name like concat('%', #{searchMessage}, '%')
@@ -40,6 +40,9 @@
                 or rate like concat('%', #{searchMessage}, '%')
             </if>
         </where>
+    </select>
+    <select id="calculateAverageRating" resultType="java.lang.Double">
+        select avg(preference) from (select preference from movie_preferences where movieID = #{movieId}) as sub
     </select>
 
 </mapper>

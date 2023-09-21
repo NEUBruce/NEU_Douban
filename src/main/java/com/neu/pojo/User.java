@@ -55,6 +55,14 @@ public class User {
     public User() {
     }
 
+    public List<Integer> getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(List<Integer> frequency) {
+        this.frequency = frequency;
+    }
+
     public Long getUserId() {
         return userId;
     }

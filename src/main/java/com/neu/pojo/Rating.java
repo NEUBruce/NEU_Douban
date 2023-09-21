@@ -1,12 +1,12 @@
 package com.neu.pojo;
 
 public class Rating {
-	private int userId;
-	private int movieId;
+	private long userId;
+	private long movieId;
 	private int rating;
 	private int timestamp;
 
-	public Rating(int userId, int movieId, int rating, int timestamp) {
+	public Rating(long userId, long movieId, int rating, int timestamp) {
 		this.userId = userId;
 		this.movieId = movieId;
 		this.rating = rating;
@@ -16,19 +16,19 @@ public class Rating {
 	public Rating() {
 	}
 
-	public int getUserId() {
-		return this.userId;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 
-	public int getMovieId() {
-		return this.movieId;
+	public long getMovieId() {
+		return movieId;
 	}
 
-	public void setMovieId(int movieId) {
+	public void setMovieId(long movieId) {
 		this.movieId = movieId;
 	}
 

@@ -34,4 +34,5 @@ public interface UserMapper {
     int addFriends(User user,Integer friendId);
 
     List<User> selectUserById(User user);
+
 }

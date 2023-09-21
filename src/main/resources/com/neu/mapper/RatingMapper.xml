@@ -12,10 +12,12 @@
     </resultMap>
 
     <insert id="addRating" parameterType="com.neu.pojo.Rating">
-        insert into movie_preference values(#{userId}, #{movieId}, #{rating},#{timestamp})
+        insert into movie_preferences values(#{userId}, #{movieId}, #{rating},#{timestamp})
     </insert>
-    <select id="selectByUserId">
-        select from movie_preference where userID = #{userId}
+    <select id="selectByUserId" resultMap="movieResultMap">
+        select * from movie_preferences where userID = #{userId}
     </select>
+
+
 
 </mapper>

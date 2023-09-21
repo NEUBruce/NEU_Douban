@@ -23,4 +23,6 @@ public interface MovieMapper {
 
     //搜索电影
     List<Movie> searchMovie(String searchMessage);
+
+    double calculateAverageRating(Movie movie);
 }

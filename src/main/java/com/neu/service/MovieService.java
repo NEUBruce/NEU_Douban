@@ -17,6 +17,7 @@ import java.util.List;
 public class MovieService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
     private UserCFRecommender userCFRecommender = new UserCFRecommender();
+    private RatingService ratingService = new RatingService();
 
     public List<Movie> selectAllMovie() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -61,7 +62,17 @@ public class MovieService {
         return mapper.searchMovie(searchMessage);
     }
 
+    public double calculateAverageRating(Movie movie){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        double avg = mapper.calculateAverageRating(movie);
+        sqlSession.close();
+        return avg;
+    }
+
     public List<Movie> recommendMovie(User user, int size) {
+        //检测是否冷启动
+
 
         List<RecommendedItem> movieIds = userCFRecommender.getUserCFRecommender(user.getUserId(), size);
         List<Movie> movies = new ArrayList<>();
