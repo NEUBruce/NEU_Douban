@@ -2,6 +2,7 @@ package com.neu.service;
 
 import com.neu.mapper.MovieMapper;
 import com.neu.mapper.UserMapper;
+import com.neu.model.recommender.ModelCFRecommender;
 import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.Movie;
 import com.neu.pojo.User;
@@ -67,16 +68,14 @@ public class MovieService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
 
-
-
         for (RecommendedItem item : movieIds) {
             Movie movie = new Movie();
             movie.setId(item.getItemID());
             movie = mapper.selectMovieById(movie);
             movies.add(movie);
         }
-
         sqlSession.close();
+
         return movies;
     }
 }
