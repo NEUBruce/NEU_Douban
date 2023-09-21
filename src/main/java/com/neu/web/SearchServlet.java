@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
@@ -28,7 +29,7 @@ public class SearchServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
         // 获取用户输入的搜索信息
         BufferedReader reader = request.getReader();
         StringBuilder json = new StringBuilder();
@@ -45,10 +46,6 @@ public class SearchServlet extends HttpServlet {
         List<Movie> searchResult = movieService.searchMovie(searchMessage);
 
         // 将查询结果传递给JSP页面进行显示
-        request.setAttribute("searchResult", searchResult);
-
-        //页面重定向
-        request.getRequestDispatcher("searchResult.jsp").forward(request, response);
+        session.setAttribute("searchResult", searchResult);
     }
-
 }
