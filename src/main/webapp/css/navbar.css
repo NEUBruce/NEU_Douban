@@ -69,6 +69,7 @@ header h1 {
     /*border-top-right-radius: 5px; !* 圆化左上角 *!*/
     /*border-bottom-right-radius: 5px; !* 圆化左下角 *!*/
     transition: border-color 0.3s;
+    text-indent: 7px;
 }
 .search-button{
     padding: 13px 0px;
