@@ -70,7 +70,7 @@ function friendRecommend(){
             //fill
             for (let i = 1; i <= 4; i++) {
                 let friend = data[i - 1];
-                $("#movie-label-" + i).text(friend.name);
+                $("#person-label-" + i).text(friend.name);
             }
         },
         error: (xhr, status, error) => {
