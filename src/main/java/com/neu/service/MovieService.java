@@ -2,16 +2,20 @@ package com.neu.service;
 
 import com.neu.mapper.MovieMapper;
 import com.neu.mapper.UserMapper;
+import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.Movie;
 import com.neu.pojo.User;
 import com.neu.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MovieService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+    private UserCFRecommender userCFRecommender = new UserCFRecommender();
 
     public List<Movie> selectAllMovie() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -56,8 +60,23 @@ public class MovieService {
         return mapper.searchMovie(searchMessage);
     }
 
-    public List<Movie> recommendMovie(Long userId, int size) {
+    public List<Movie> recommendMovie(User user, int size) {
 
-        return null;
+        List<RecommendedItem> movieIds = userCFRecommender.getUserCFRecommender(user.getUserId(), size);
+        List<Movie> movies = new ArrayList<>();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+
+
+
+        for (RecommendedItem item : movieIds) {
+            Movie movie = new Movie();
+            movie.setId(item.getItemID());
+            movie = mapper.selectMovieById(movie);
+            movies.add(movie);
+        }
+
+        sqlSession.close();
+        return movies;
     }
 }

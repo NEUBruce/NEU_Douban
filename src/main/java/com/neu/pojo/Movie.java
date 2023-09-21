@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Movie {
-	private int id;
+	private Long id;
 	private String name;
 	private String year;
 	private List<String> type;
@@ -20,14 +20,7 @@ public class Movie {
 	public Movie() {
 	}
 
-	public Movie(int id, String name, String year, List<String> type, String typeInfo, double rate) {
-		this.id = id;
-		this.name = name;
-		this.year = year;
-		this.type = type;
-		this.typeInfo = typeInfo;
-		this.rate = rate;
-	}
+
 
 	public String getTypeInfo() {
 		return typeInfo;
@@ -48,11 +41,11 @@ public class Movie {
 		this.rate = rate;
 	}
 
-	public int getId() {
-		return this.id;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

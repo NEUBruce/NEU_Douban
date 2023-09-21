@@ -63,7 +63,7 @@ public class ImportUsers {
     private static User fillUser(String line) {
         User user = new User();
         String[] userInfo = line.split("::");
-        user.setUserId(userInfo[0]);
+        user.setUserId(Long.valueOf(userInfo[0]));
         user.setGender(userInfo[1]);
         user.setAge(Integer.parseInt(userInfo[2]));
         user.setVocation(userInfo[3]);

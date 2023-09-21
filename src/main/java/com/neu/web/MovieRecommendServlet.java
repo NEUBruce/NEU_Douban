@@ -2,6 +2,7 @@ package com.neu.web;
 
 import com.alibaba.fastjson.JSON;
 import com.neu.pojo.Movie;
+import com.neu.pojo.User;
 import com.neu.service.MovieService;
 
 import javax.servlet.*;
@@ -15,10 +16,9 @@ public class MovieRecommendServlet extends HttpServlet {
     MovieService movieService = new MovieService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = Long.parseLong(request.getParameter("id"));
-        int size = Integer.parseInt(request.getParameter("size"));
+        User user = (User) request.getSession().getAttribute("user");
 
-        List<Movie> movies = movieService.recommendMovie(id, size);
+        List<Movie> movies = movieService.recommendMovie(user, 5);
 
         response.setContentType("application/json");
 
