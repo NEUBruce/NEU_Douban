@@ -60,6 +60,14 @@ public class RegisterServlet extends HttpServlet {
             user.setZipCode(zipCode);
             user.setVocation(vocation);
 
+            // 检查用户名是否已存在
+            User isExist = userService.selectUserByName(user);
+            if (isExist!=null) {
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                response.getWriter().write("Username already exists");
+                return;
+            }
+
             //注册用户
             int result = userService.insertUser(user);
             if(result!=0){
