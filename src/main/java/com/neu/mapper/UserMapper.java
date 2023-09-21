@@ -32,4 +32,6 @@ public interface UserMapper {
 
     //增加关注
     int addFriends(User user,Integer friendId);
+
+    List<User> selectUserById(User user);
 }
