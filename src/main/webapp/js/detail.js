@@ -26,6 +26,7 @@ function loadMovieInfo(){
     if(movie.rate != 0){
         starRank();
     }
+    buttonSubmit();
 }
 
 
@@ -50,6 +51,14 @@ function buttonSubmit(){
 
 
         //calculate the active star
+        let rank = 0;
+        for (let i = 0; i <= 4; i++) {
+            if(starContainer1[i].classList.contains("active"))
+            {
+                rank ++;
+            }
+        }
+
         $.ajax({
             url: "http://localhost:8080/rating",
             method: "post",
