@@ -5,14 +5,17 @@
 <mapper namespace="com.neu.mapper.RatingMapper">
     <!--    无法识别时使用ResultMap-->
     <resultMap id="movieResultMap" type="com.neu.pojo.Rating">
-        <result column="userID" property="user_id"/>
-        <result column="movieID" property="movie_id"/>
+        <result column="userID" property="userId"/>
+        <result column="movieID" property="movieId"/>
         <result column="preference" property="rating"/>
         <result column="timestamp" property="timestamp"/>
     </resultMap>
 
     <insert id="addRating" parameterType="com.neu.pojo.Rating">
-        insert into movie_preference values(#{user_id}, #{movie_id}, #{rating},#{timestamp})
+        insert into movie_preference values(#{userId}, #{movieId}, #{rating},#{timestamp})
     </insert>
+    <select id="selectByUserId">
+        select from movie_preference where userID = #{userId}
+    </select>
 
 </mapper>

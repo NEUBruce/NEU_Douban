@@ -4,4 +4,6 @@ import com.neu.pojo.Rating;
 
 public interface RatingMapper {
     public void addRating(Rating rating);
+
+    public void selectByUserId(Rating rating);
 }
