@@ -14,9 +14,18 @@ public class CalculateAverageRating {
         List<Movie> movies = movieService.selectAllMovie();
 
         for (Movie movie : movies) {
-            double avg = movieService.calculateAverageRating(movie);
-            movie.setRate(avg);
-            movieService.modifyMovie(movie);
+            System.out.println(movie);
+            try {
+                double avg = movieService.calculateAverageRating(movie);
+                if (avg != 0.0) {
+                    movie.setRate(avg);
+                    movieService.modifyMovie(movie);
+                }
+            }catch (Exception e) {
+
+            }
+
+
         }
     }
 
