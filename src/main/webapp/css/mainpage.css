@@ -1,5 +1,7 @@
 body{
   /*background-color: rgb(240,240,240);*/
+    /* 将页面缩小为75% */
+    /*zoom: 75%;*/
     background-color: rgb(245, 245, 245);
 }
 
