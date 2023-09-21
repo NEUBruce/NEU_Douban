@@ -31,7 +31,7 @@
     </select>
 
     <select id="searchMovie" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
-        select * from movie
+        select * from movies
         <where>
             <if test="searchMessage != null and searchMessage != ''">
                 and name like concat('%', #{searchMessage}, '%')

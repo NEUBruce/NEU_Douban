@@ -1,16 +1,16 @@
-E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\pojo\MovieInfo.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommender\SlopeRecommender.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\DataModelUtil.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\service\UserService.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\ImportMovies.java
+E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\mapper\HistoryMapper.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\DataBaseUtil.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\web\FriendsServlet.java
-E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\GetMovieInfo.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommender\ModelCFRecommender.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\similarity\UserInfoSimilarity.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommender\NEURecommender.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\mapper\MovieMapper.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\UUIDUtil.java
+E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\pojo\History.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\web\RegisterServlet.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommender\UserBasedRecommender.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\web\AddFriendsServlet.java
@@ -31,6 +31,7 @@ E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommend
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\SqlSessionFactoryUtils.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\service\RatingService.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\service\MovieService.java
+E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\service\HistoryService.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\ImportUsers.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\model\recommender\UserCFRecommender.java
 E:\课程作业留档\大数据\NEU_Douban\src\main\java\com\neu\util\StringUtil.java

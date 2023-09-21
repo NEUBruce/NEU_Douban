@@ -23,8 +23,6 @@ function register() {
     var zipCode=document.getElementById("zipCode").value;
     var selectedVocation = document.getElementById("vocation").value;
 
-    console.log(password);
-    console.log(confirmPassword);
     if (password === confirmPassword) {
         // 构建一个包含用户信息的JSON对象
         var userData = {

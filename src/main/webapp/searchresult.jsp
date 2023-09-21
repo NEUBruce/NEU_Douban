@@ -1,8 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -15,22 +18,14 @@
     <title>Movie</title>
     <link rel="stylesheet" type="text/css" href="css/searchresult.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <!--    <link rel="stylesheet" type="text/css" href="css/detail.css">-->
-    <!--    <link rel="stylesheet" type="text/css" href="css/star.css">-->
+
 </head>
 <body>
 <div class="navbar">
 
     <a href="mainpage.html" id="personal-center"></a>
     <a href="mainpage.html" id="Home">Home</a>
-    <!--            <input type="text" id="search" placeholder="Please input search key world">-->
-<!--    <div class="dropdown">-->
-<!--        <button class="dropbtn">Projects-->
-<!--            <i class="fa fa-caret-down"></i>-->
-<!--        </button>-->
-<!--        <div class="dropdown-content">-->
-<!--        </div>-->
-<!--    </div>-->
+
 </div>
 
 <div class="search-container">
@@ -39,10 +34,11 @@
     <button class="search-button1"></button>
 </div>
 <div class="content-container">
+    <c:forEach var="movie" items="${sessionScope.searchResult}">
     <div class="result">
         <img src="image/movie2.jpg" class="movie-photo">
         <div id="detail" class="detail">
-            <h2 id="movie-name" class="movie-name">Auburnheimer</h2>
+            <h2 id="movie-name" class="movie-name">${movie.name}</h2>
             <div id="rank-box" class="rank-box">
                 <h3 id="rank" class="rank">Average Rank: </h3>
                 <div class="star-container inactive">
@@ -61,8 +57,8 @@
                     <i class="fa-regular fa-star"></i>
                 </div>
             </div>
-            <h3 id="time" class="time">Released Time: 2023-9-21</h3>
-            <h3 id="category" class="category">Category: History</h3>
+            <h3 id="time" class="time">Released Time: ${movie.year}</h3>
+            <h3 id="category" class="category">Category: ${movie.typeInfo}</h3>
         </div>
     </div>
     <div class="result">
@@ -120,6 +116,7 @@
     <div class="result"></div>
     <div class="result"></div>
     <div class="result"></div>
+    </c:forEach>
 </div>
 <!-- Script -->
 <script src="js/detail.js"></script>
