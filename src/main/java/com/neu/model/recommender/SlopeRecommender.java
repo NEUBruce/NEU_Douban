@@ -9,7 +9,7 @@ import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Recommender;
 
-public class MySlopeOneRecommender {
+public class SlopeRecommender {
 	public List<RecommendedItem> mySlopeOneRecommender(long userID,int size){
 		List<RecommendedItem> recommendations = null;
 		try {

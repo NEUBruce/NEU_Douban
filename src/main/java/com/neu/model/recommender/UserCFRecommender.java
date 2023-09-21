@@ -8,6 +8,7 @@ import org.apache.mahout.cf.taste.model.*;
 import org.apache.mahout.cf.taste.neighborhood.*;
 import org.apache.mahout.cf.taste.recommender.*;
 import org.apache.mahout.cf.taste.similarity.*;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 
 import java.util.*;
 

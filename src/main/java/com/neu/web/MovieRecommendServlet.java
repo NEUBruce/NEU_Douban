@@ -1,5 +1,6 @@
 package com.neu.web;
 
+import com.alibaba.fastjson.JSON;
 import com.neu.pojo.Movie;
 import com.neu.service.MovieService;
 
@@ -18,6 +19,12 @@ public class MovieRecommendServlet extends HttpServlet {
         int size = Integer.parseInt(request.getParameter("size"));
 
         List<Movie> movies = movieService.recommendMovie(id, size);
+
+        response.setContentType("application/json");
+
+        String responseData = JSON.toJSONString(movies);
+
+        response.getWriter().write(responseData);
 
     }
 

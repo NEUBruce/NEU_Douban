@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.neu.model.recommender.ItemCFRecommender;
-import com.neu.model.recommender.MySlopeOneRecommender;
+import com.neu.model.recommender.SlopeRecommender;
 import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.MovieInfo;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
@@ -45,7 +45,7 @@ public class RecomendServlet extends HttpServlet {
 			//拿到推荐的电影
 			recommendation = mibr.getItemCFRecommender(userID,size);
 		}else if(recommendType.equals("slopeOne")){//slope one
-			MySlopeOneRecommender msor = new MySlopeOneRecommender();
+			SlopeRecommender msor = new SlopeRecommender();
 			//拿到推荐的电影
 			recommendation = msor.mySlopeOneRecommender(userID,size);
 		}

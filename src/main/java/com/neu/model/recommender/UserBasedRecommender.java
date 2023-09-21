@@ -1,61 +1,40 @@
 package com.neu.model.recommender;
 
-import org.apache.mahout.cf.taste.common.Refreshable;
 import org.apache.mahout.cf.taste.common.TasteException;
-import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
-import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
-import org.apache.mahout.cf.taste.impl.recommender.knn.KnnItemBasedRecommender;
-import org.apache.mahout.cf.taste.impl.recommender.knn.NonNegativeQuadraticOptimizer;
-import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
+import org.apache.mahout.cf.taste.impl.common.FastByIDMap;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.similarity.GenericUserSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
-import org.apache.mahout.cf.taste.recommender.IDRescorer;
-import org.apache.mahout.cf.taste.recommender.RecommendedItem;
-import org.apache.mahout.cf.taste.recommender.Recommender;
-import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
-import java.util.Collection;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
 
-public class UserBasedRecommender implements Recommender {
-    public List<RecommendedItem> getUserBasedRecommender(DataModel dataModel) throws TasteException {
-        // 欧几里得计算物品相似度
-        ItemSimilarity itemSimilarity = new EuclideanDistanceSimilarity(dataModel);
-        KnnItemBasedRecommender recommender = new KnnItemBasedRecommender(dataModel, itemSimilarity, new NonNegativeQuadraticOptimizer(), 10);
+public class UserBasedRecommender {
+    public static void main(String[] args) {
+        try {
+            // 加载用户数据文件
+            DataModel dataModel = new FileDataModel(new File("user_data.csv"));
 
-        LongPrimitiveIterator iter = dataModel.getUserIDs();
-        while (iter.hasNext()) {
-            long uid = iter.nextLong();
-            List list = recommenderBuilder.buildRecommender(dataModel).recommend(uid, RECOMMENDER_NUM);
-            RecommendFactory.showItems(uid, list, true);
+            // 使用余弦相似度计算用户相似度
+            UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
+
+            UserSimilarity mixedSimilarity = new GenericUserSimilarity()
+
+            // 输出用户相似度
+            for (long userID1 : similarityMatrix.keySet()) {
+                FastByIDMap<Double> userSimilarities = similarityMatrix.get(userID1);
+                for (long userID2 : userSimilarities.keySet()) {
+                    double similarityScore = userSimilarities.get(userID2);
+                    System.out.println("User " + userID1 + " and User " + userID2 + " have similarity score: " + similarityScore);
+                }
+            }
+        } catch (IOException | TasteException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
     }
 
-    public List<RecommendedItem> recommend(long l, int i) throws TasteException {
-        return null;
-    }
-
-    public List<RecommendedItem> recommend(long l, int i, IDRescorer idRescorer) throws TasteException {
-        return null;
-    }
-
-    public float estimatePreference(long l, long l1) throws TasteException {
-        return 0;
-    }
-
-    public void setPreference(long l, long l1, float v) throws TasteException {
-
-    }
-
-    public void removePreference(long l, long l1) throws TasteException {
-
-    }
-
-    public DataModel getDataModel() {
-        return null;
-    }
-
-    public void refresh(Collection<Refreshable> collection) {
-
-    }
 }

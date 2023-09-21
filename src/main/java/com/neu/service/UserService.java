@@ -50,4 +50,10 @@ public class UserService {
         return mapper.deleteUserByName(user);
     }
 
+    public List<User> recommendUsers(Long userId, int size) {
+
+        return null;
+
+    }
+
 }
