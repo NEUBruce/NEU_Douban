@@ -55,4 +55,9 @@ public class MovieService {
         sqlSession.close();
         return mapper.searchMovie(searchMessage);
     }
+
+    public List<Movie> recommendMovie(String userId) {
+
+        return null;
+    }
 }

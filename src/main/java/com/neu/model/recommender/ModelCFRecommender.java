@@ -1,18 +1,20 @@
 package com.neu.model.recommender;
 
 import com.neu.util.DataModelUtil;
-import org.apache.mahout.cf.taste.impl.neighborhood.*;
-import org.apache.mahout.cf.taste.impl.recommender.*;
-import org.apache.mahout.cf.taste.impl.similarity.*;
-import org.apache.mahout.cf.taste.model.*;
-import org.apache.mahout.cf.taste.neighborhood.*;
-import org.apache.mahout.cf.taste.recommender.*;
-import org.apache.mahout.cf.taste.similarity.*;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.CachingRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
-import java.util.*;
+import java.util.List;
 
-public class UserCFRecommender {
-	public List<RecommendedItem> getUserCFRecommender(long userID, int size) {
+public class ModelCFRecommender {
+	public List<RecommendedItem> getModelCFRecommender(long userID, int size) {
 		// step:1 构建模型 2 计算相似度 3 查找k紧邻 4 构造推荐引擎
 		List<RecommendedItem> recommendations = null;
 		try {
@@ -22,15 +24,16 @@ public class UserCFRecommender {
 			Recommender recommender = new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, similarity));//采用 CachingRecommender 为 RecommendationItem 进行缓存
 			recommendations = recommender.recommend(userID, size);//得到推荐的结果，size是推荐结果的数目
 		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return recommendations;
 	}
 
 	public static void main(String args[]) throws Exception {
-		UserCFRecommender recommender = new UserCFRecommender();
+		ModelCFRecommender recommender = new ModelCFRecommender();
 
-		List<RecommendedItem> list = recommender.getUserCFRecommender(1, 2);
+		List<RecommendedItem> list = recommender.getModelCFRecommender(1, 2);
 
 		for (RecommendedItem item : list) {
 			System.out.printf("(%s,%f)", item.getItemID(), item.getValue());
