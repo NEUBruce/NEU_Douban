@@ -11,51 +11,76 @@
 <script src="js/jquery-3.7.1.min.js"></script>
 <body>
     <div class="navbar">
-        <a href="login.html">Home</a>
+        <a href="mainpage.html" id="personal-center"></a>
+        <a href="mainpage.html" id="Home">Home</a>
+
 <!--        <img src="image/search.jpg" id="search-image"></img>-->
-        <input type="text" id="search" placeholder="Please input search key world">
-        <div class="dropdown">
-            <button class="dropbtn">Projects
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            </div>
-        </div>
+        <input type="text" id="search" placeholder="Please input search key word">
+<!--        <div class="dropdown">-->
+<!--            <button class="dropbtn">Projects-->
+<!--                <i class="fa fa-caret-down"></i>-->
+<!--            </button>-->
+<!--            <div class="dropdown-content">-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
-   <div id="content-container">
+   <div id="content-container" class="content-container">
     <h2>Movies Recommended</h2>
     <div id="movie-container" class="movie-container">
         <div id="movies">
-            <img src="image/movie1.jpg" class="movie" id="movie-poster-1" alt="电影海报 1">
-            <img src="image/movie2.jpg" class="movie" id="movie-poster-2" alt="电影海报 2">
-            <img src="image/movie2.jpg" class="movie" id="movie-poster-3" alt="电影海报 3">
-            <img src="image/movie2.jpg" class="movie" id="movie-poster-4" alt="电影海报 4">
-            <img src="image/movie2.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
+            <div class="movie-box">
+                <img src="image/movie1.jpg" class="movie" id="movie-poster-1" alt="电影海报 1">
+                <label for="movie-poster-1" class="movie-label">I'm not the God of Medicine</label>
+            </div>
+            <div class="movie-box">
+                <img src="image/movie2.jpg" class="movie" id="movie-poster-2" alt="电影海报 2">
+                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+            </div>
+            <div class="movie-box">
+                <img src="image/movie2.jpg" class="movie" id="movie-poster-3" alt="电影海报 3">
+                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+            </div>
+            <div class="movie-box">
+                <img src="image/movie2.jpg" class="movie" id="movie-poster-4" alt="电影海报 4">
+                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+            </div>
+            <div class="movie-box">
+                <img src="image/movie2.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
+                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+            </div>
+
+
+
         </div>
-        <div id="button-container">
+        <div id="btn-container">
             <img src="image/update.jpg" id="next-image">
-            <button id="movie-next">换一批</button>
+            <button id="movie-next">Change A Batch</button>
         </div>
     </div>
+
     <div id="friend-container" class="friend-container">
         <div clss="button-container">
             <button id="previous" class="previous-button"></button>
         </div>
         <div id="friends" class="friends">
-            <div class="box">
-                <img src="image/person1.jpg" class="photo"></img>
+            <div class="person-box">
+                <img src="image/person1.jpg" class="photo" id="person1"></img>
+                <label for="person1" class="person-label">Amy</label>
                 <button class="add-button">Add</button>
             </div>
-            <div class="box">
-                <img src="image/person2.jpg" class="photo"></img>
+            <div class="person-box">
+                <img src="image/person2.jpg" class="photo" id="person2"></img>
+                <label for="person2" class="person-label">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
-            <div class="box">
-                <img src="image/person2.jpg" class="photo"></img>
+            <div class="person-box">
+                <img src="image/person2.jpg" class="photo" id="person3"></img>
+                <label for="person3" class="person-label">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
-            <div class="box">
-                <img src="image/person2.jpg" class="photo"></img>
+            <div class="person-box">
+                <img src="image/person2.jpg" class="photo" id="person4"></img>
+                <label for="person4" class="person-label">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
         </div>
