@@ -24,8 +24,11 @@ public class UserService {
     public User selectUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        User selectedUser = mapper.selectUserByName(user);
         sqlSession.close();
-        return mapper.selectUserByName(user);
+
+        return selectedUser;
     }
 
     public int insertUser(User user){
@@ -48,6 +51,35 @@ public class UserService {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         sqlSession.close();
         return mapper.deleteUserByName(user);
+    }
+
+    //查找所有关注
+    public List<User> selectAllFriends(User user){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
+        return mapper.selectAllFriends(user);
+    }
+
+    //增加关注
+    public int addFriends(User user,Integer friendId){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
+        return mapper.addFriends(user,friendId);
+    }
+
+    //删除关注
+    public int deleteFriends(User user,Integer friendId){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        sqlSession.close();
+        return mapper.deleteFriends(user,friendId);
+    }
+    public List<User> recommendUsers(Long userId, int size) {
+
+        return null;
+
     }
 
 }

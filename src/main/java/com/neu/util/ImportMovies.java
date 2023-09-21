@@ -76,13 +76,13 @@ public class ImportMovies {
 
 	private static Movie fillMovie(String line) {
 		Movie movie = new Movie();
-		String[] mo = line.split("::");
-		movie.setId(Integer.parseInt(mo[0]));
-		movie.setName(mo[1].substring(0, mo[1].lastIndexOf("(") - 1));
-		movie.setYear(mo[1].substring(mo[1].lastIndexOf("(") + 1,
-				mo[1].lastIndexOf(")")));
+		String[] movies = line.split("::");
+		movie.setId(Integer.parseInt(movies[0]));
+		movie.setName(movies[1].substring(0, movies[1].lastIndexOf("(") - 1));
+		movie.setYear(movies[1].substring(movies[1].lastIndexOf("(") + 1,
+				movies[1].lastIndexOf(")")));
 		List<String> type = new ArrayList<String>();
-		String[] t = mo[2].split("\\|");
+		String[] t = movies[2].split("\\|");
 		for (int i = 0; i < t.length; i++) {
 			type.add(t[i]);
 		}

@@ -28,23 +28,27 @@
 .search-text{
     margin-left: 50px;
     border: 1px solid #ccc;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
     /*transition: border-color 0.3s;*/
     height: 40px;
     width: 600px;
+    font-family: Arial;
+    font-size: medium;
+    /*padding: 0px 50px 0px 0px;*/
+    text-indent: 20px;
 }
 .search-text::placeholder {
     margin-left: 5px;/* 文本居中对齐 */
 
 }
 .search-button{
-    background-image: url("../image/search.jpg");
+    background-image: url("../image/search.png");
     background-color: #818181;
     height: 42px;
     width: 42px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     border-left: 1px solid #ccc;
     border-right: 0px;
     border-top: 0px;

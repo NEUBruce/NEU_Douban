@@ -33,22 +33,20 @@ public class ImportRatings {
 			}
 			insertRatings(ratingList);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	private static Rating fillRating(String line) {
 
-		String[] ra = line.split("::");
+		String[] ratings = line.split("::");
 		Rating rating = new Rating();
-		rating.setUser_id(Integer.parseInt(ra[0]));
-		rating.setMovie_id(Integer.parseInt(ra[1]));
-		rating.setRating(Integer.parseInt(ra[2]));
-		rating.setTimestamp(Integer.parseInt(ra[3]));
+		rating.setUser_id(Integer.parseInt(ratings[0]));
+		rating.setMovie_id(Integer.parseInt(ratings[1]));
+		rating.setRating(Integer.parseInt(ratings[2]));
+		rating.setTimestamp(Integer.parseInt(ratings[3]));
 		return rating;
 	}
 

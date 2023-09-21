@@ -14,7 +14,7 @@ function login() {
         success: (data) => {
             if (data.status === "success") {
                 alert("Login Succeed!");
-                window.location.href = "http://localhost:8080/index.html";
+                window.location.href = "http://localhost:8080/mainpage.html";
             } else {
                 alert("Login Failed: " + data.message);
             }

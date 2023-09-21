@@ -1,5 +1,6 @@
 package com.neu.pojo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -18,7 +19,11 @@ public class User {
 
     private List<User> friends;
 
-    public User(String userId, String username, String password, String gender, String vocation, String zipCode, Integer age, List<User> friends) {
+    private List<Integer> frequency;
+
+    private String frequencyInfo;
+
+    public User(String userId, String username, String password, String gender, String vocation, String zipCode, Integer age, List<User> friends, List<Integer> frequency, String frequencyInfo) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -27,6 +32,23 @@ public class User {
         this.zipCode = zipCode;
         this.age = age;
         this.friends = friends;
+        this.frequency = frequency;
+        this.frequencyInfo = frequencyInfo;
+    }
+
+    public String getFrequencyInfo() {
+        return frequencyInfo;
+    }
+
+    public void setFrequencyInfo(String frequencyInfo) {
+        String[] frequencies = frequencyInfo.split(",");
+        this.frequency = new ArrayList<Integer>();
+
+        for (String f : frequencies) {
+            frequency.add(Integer.parseInt(f));
+        }
+
+        this.frequencyInfo = frequencyInfo;
     }
 
     public User() {
