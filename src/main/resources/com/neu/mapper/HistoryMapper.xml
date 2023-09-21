@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.mapper.HistoryMapper">
+    <!--    无法识别时使用ResultMap-->
+    <resultMap id="historyResultMap" type="com.neu.pojo.History">
+        <result column="id" property="userId"/>
+        <result column="userId" property="userId"/>
+        <result column="movieId" property="movieId"/>
+    </resultMap>
+    <insert id="addHistory">
+        insert into recomend_history
+        values (#{id}, #{movieId}, #{userId}, #{timestamp});
+    </insert>
+    <select id="selectHistoryByUserId" resultType="com.neu.pojo.History">
+        select *
+        from recomend_history where userId = #{userId};
+    </select>
+
+
+</mapper>
