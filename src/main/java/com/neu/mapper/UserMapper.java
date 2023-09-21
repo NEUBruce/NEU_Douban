@@ -23,4 +23,13 @@ public interface UserMapper {
 
     //登录
     int login(User user);
+
+    //查找所有关注
+    List<User> selectAllFriends(User user);
+
+    //删除关注
+    int deleteFriends(User user,Integer friendId);
+
+    //增加关注
+    int addFriends(User user,Integer friendId);
 }

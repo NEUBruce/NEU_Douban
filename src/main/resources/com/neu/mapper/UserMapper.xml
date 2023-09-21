@@ -26,7 +26,7 @@
     </insert>
 
     <update id="modifyUser">
-        update user set id=#{user_id}, userName=#{username}, password=#{password},gender=#{gender},vocation=#{vocation}, zip_code=#{zipCode},age=#{age}
+        update user set id=#{userId}, userName=#{username}, password=#{password},gender=#{gender},vocation=#{vocation}, zip_code=#{zipCode},age=#{age}
     </update>
 
     <delete id="deleteUserByName">
@@ -37,4 +37,16 @@
         select * from user where username=#{username}
     </select>
 
+    <select id="selectAllFriends" resultMap="userResultMap">
+        select u.userId,u.username,u.gender,u.vocation,u.zipCode,u.age from user u join relation r on u.id=r.ownerId
+    </select>
+
+    <insert id="addFriends" parameterType="com.neu.pojo.User">
+        insert into relation values(#{userId},#{ownerId},#{friendId})
+    </insert>
+
+    <delete id="deleteFriends">
+        delete r from relation r join user u on u.id=r.ownerId
+        where u.id=#{userId} and r.friendId=#{friendId}
+    </delete>
 </mapper>
