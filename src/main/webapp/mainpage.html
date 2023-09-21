@@ -11,22 +11,15 @@
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/mainpage.js"></script>
 <body>
-    <div class="navbar">
-        <a href="mainpage.html" id="personal-center"></a>
-        <a href="mainpage.html" id="Home">Home</a>
+<div class="navbar">
+    <a href="mainpage.html" id="personal-center"></a>
+    <a href="mainpage.html" id="Home">Home</a>
 
-<!--        <img src="image/search.jpg" id="search-image"></img>-->
-        <input type="text" id="search" placeholder="Please input search key word">
-        <button class="search-button" id="search-button"></button>
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn">Projects-->
-<!--                <i class="fa fa-caret-down"></i>-->
-<!--            </button>-->
-<!--            <div class="dropdown-content">-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
-   <div id="content-container" class="content-container">
+    <input type="text" id="search" placeholder="Please input search key word">
+    <button class="search-button" id="search-button" onclick="search()"></button>
+
+</div>
+<div id="content-container" class="content-container">
     <h2>Movies Recommended</h2>
     <div id="movie-container" class="movie-container">
         <div id="movies">
@@ -89,7 +82,7 @@
         </div>
     </div>
 
-   </div>
+</div>
 </body>
 
 <script>

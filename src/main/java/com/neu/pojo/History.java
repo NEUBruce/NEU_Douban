@@ -5,7 +5,7 @@ public class History {
     private long userId;
     private long movieId;
 
-    private int timestamp;
+    private long timestamp;
 
     public History(int id, long userId, long movieId, int timestamp) {
         this.id = id;
@@ -14,11 +14,11 @@ public class History {
         this.timestamp = timestamp;
     }
 
-    public int getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(int timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

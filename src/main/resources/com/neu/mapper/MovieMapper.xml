@@ -6,14 +6,15 @@
     <!--    无法识别时使用ResultMap-->
     <resultMap id="movieResultMap" type="com.neu.pojo.Movie">
         <result column="type" property="typeInfo"></result>
+        <result column="published_year" property="year"/>
     </resultMap>
     <insert id="addMovie">
-        insert into movies values(#{id}, #{name}, #{publishedYear}, #{typeInfo}, #{rate})
+        insert into movies values(#{id}, #{name}, #{year}, #{typeInfo}, #{rate})
     </insert>
     <update id="modifyMovie">
         update movies
         <set>
-            name=#{name}, published_year=#{publishedYear}, type=#{typeInfo}, rate=#{rate}
+            name=#{name}, published_year=#{year}, type=#{typeInfo}, rate=#{rate}
         </set>
         <where>
             id=#{id}
@@ -23,7 +24,7 @@
         delete from movies where id = #{id}
     </delete>
 
-    <select id="selectAllMovie" resultType="com.neu.pojo.Movie">
+    <select id="selectAllMovie" resultMap="movieResultMap">
         select * from movies
     </select>
     <select id="selectMovieById" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
@@ -31,7 +32,7 @@
     </select>
 
     <select id="searchMovie" resultType="com.neu.pojo.Movie" resultMap="movieResultMap">
-        select * from movie
+        select * from movies
         <where>
             <if test="searchMessage != null and searchMessage != ''">
                 and name like concat('%', #{searchMessage}, '%')
@@ -40,6 +41,9 @@
                 or rate like concat('%', #{searchMessage}, '%')
             </if>
         </where>
+    </select>
+    <select id="calculateAverageRating" resultType="java.lang.Double">
+        select avg(preference) from (select preference from movie_preferences where movieID = #{id}) as sub
     </select>
 
 </mapper>

@@ -18,9 +18,8 @@ public class FriendRecommendServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Long id = Long.parseLong(request.getParameter("id"));
-        int size = Integer.parseInt(request.getParameter("size"));
 
-        List<User> users = userService.recommendUsers(id, size);
+        List<User> users = userService.recommendUsers(id, 4);
 
         response.setContentType("application/json");
 

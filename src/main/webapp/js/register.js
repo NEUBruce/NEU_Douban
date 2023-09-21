@@ -23,8 +23,6 @@ function register() {
     var zipCode=document.getElementById("zipCode").value;
     var selectedVocation = document.getElementById("vocation").value;
 
-    console.log(password);
-    console.log(confirmPassword);
     if (password === confirmPassword) {
         // 构建一个包含用户信息的JSON对象
         var userData = {
@@ -42,7 +40,6 @@ function register() {
             method: "POST",
             data: JSON.stringify(userData), // 将JSON对象转换为字符串
             contentType: "application/json",
-            async: false,
             success: function(data) {
                 if (data && data.message === "Successfully registered") {
                     alert("Registration successful. Redirecting to login page.");
@@ -53,7 +50,13 @@ function register() {
                 }
             },
             error: function(xhr, status, error) {
-                alert("Registration failed. Error: " + error);
+                if (xhr.responseText) {
+                    // 使用后端返回的自定义错误消息
+                    alert("Registration failed. Error: " + xhr.responseText);
+                } else {
+                    // 没有自定义错误消息时，显示默认消息
+                    alert("Registration failed. Error: " + error);
+                }
             }
         });
     } else {
