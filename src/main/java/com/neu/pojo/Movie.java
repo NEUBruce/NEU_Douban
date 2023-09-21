@@ -2,6 +2,7 @@ package com.neu.pojo;
 
 import com.neu.util.StringUtil;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,6 +35,9 @@ public class Movie {
 
 	public void setTypeInfo(String typeInfo) {
 		this.typeInfo = typeInfo;
+		String[] types = typeInfo.split(",");
+		this.type = Arrays.asList(types);
+
 	}
 
 	public double getRate() {

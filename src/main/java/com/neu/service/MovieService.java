@@ -56,7 +56,7 @@ public class MovieService {
         return mapper.searchMovie(searchMessage);
     }
 
-    public List<Movie> recommendMovie(String userId) {
+    public List<Movie> recommendMovie(Long userId, int size) {
 
         return null;
     }
