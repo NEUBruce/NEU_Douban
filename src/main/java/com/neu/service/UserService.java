@@ -14,67 +14,112 @@ public class UserService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
     public List<User> selectAllUser() {
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        List<User> userList = mapper.selectAllUser();
-        sqlSession.close();
-        return userList;
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            List<User> userList = mapper.selectAllUser();
+            sqlSession.commit();
+            sqlSession.close();
+            return userList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public User selectUserByName(User user){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-        User selectedUser = mapper.selectUserByName(user);
-        sqlSession.close();
-
-        return selectedUser;
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            User selectUser = mapper.selectUserByName(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return selectUser;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public int insertUser(User user){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.insertUser(user);
+    public int insertUser(User user) {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            int result = mapper.insertUser(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return result;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public int modifyUser(User user){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.modifyUser(user);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            int result = mapper.modifyUser(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     //删除用户
     public int deleteUserByName(User user){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.deleteUserByName(user);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            int result = mapper.deleteUserByName(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     //查找所有关注
     public List<User> selectAllFriends(User user){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.selectAllFriends(user);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            List<User> userList = mapper.selectAllFriends(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return userList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     //增加关注
     public int addFriends(User user,Integer friendId){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.addFriends(user,friendId);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            int result = mapper.addFriends(user, friendId);
+            sqlSession.commit();
+            sqlSession.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     //删除关注
     public int deleteFriends(User user,Integer friendId){
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        sqlSession.close();
-        return mapper.deleteFriends(user,friendId);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            int result = mapper.deleteFriends(user, friendId);
+            sqlSession.commit();
+            sqlSession.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
     public List<User> recommendUsers(Long userId, int size) {
 

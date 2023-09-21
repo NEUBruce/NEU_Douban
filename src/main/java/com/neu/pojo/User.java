@@ -1,6 +1,7 @@
 package com.neu.pojo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class User {
@@ -19,7 +20,7 @@ public class User {
 
     private List<User> friends;
 
-    private List<Integer> frequency;
+    private List<Integer> frequency= Arrays.asList(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 
     private String frequencyInfo;
 

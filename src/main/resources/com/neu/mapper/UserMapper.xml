@@ -23,7 +23,8 @@
     </select>
 
     <insert id="insertUser" parameterType="com.neu.pojo.User">
-        insert into user values(#{userId}, #{username}, #{password}, #{gender}, #{vocation},#{zipCode},#{age})
+        insert into user (username, password, gender, vocation, zip_code, age)
+        values (#{username}, #{password}, #{gender}, #{vocation}, #{zipCode}, #{age})
     </insert>
 
     <update id="modifyUser">

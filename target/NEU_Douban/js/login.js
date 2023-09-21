@@ -4,7 +4,7 @@ function login() {
 
     // 登录逻辑，发送请求到服务器验证用户名和密码
     $.ajax({
-        url: "http://localhost:8080/login",
+        url: "http://localhost:8889/login",
         method: "post",
         data: JSON.stringify({
             username: username,
@@ -14,7 +14,7 @@ function login() {
         success: (data) => {
             if (data.status === "success") {
                 alert("Login Succeed!");
-                window.location.href = "http://localhost:8080/mainpage.html";
+                window.location.href = "http://localhost:8889/mainpage.html";
             } else {
                 alert("Login Failed: " + data.message);
             }
@@ -27,5 +27,5 @@ function login() {
 }
 
 function register() {
-    window.location.href="register.jsp";
+    window.location.href="register.html";
 }
