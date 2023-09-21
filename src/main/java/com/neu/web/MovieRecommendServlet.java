@@ -18,7 +18,7 @@ public class MovieRecommendServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
 
-        List<Movie> movies = movieService.recommendMovie(user, 5);
+        List<Movie> movies = movieService.recommendMovie(user, 100);
 
         response.setContentType("application/json");
 
