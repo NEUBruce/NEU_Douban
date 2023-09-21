@@ -53,7 +53,7 @@ public class ImportMovies {
 			ps = conn.prepareStatement(sql);
 
 			for (Movie movie : movies) {
-				ps.setInt(1, movie.getId());
+				ps.setLong(1, movie.getId());
 				ps.setString(2, movie.getName());
 				ps.setString(3, movie.getYear());
 				ps.setString(4, StringUtil.connectString(movie.getType(), ", "));
@@ -77,7 +77,7 @@ public class ImportMovies {
 	private static Movie fillMovie(String line) {
 		Movie movie = new Movie();
 		String[] movies = line.split("::");
-		movie.setId(Integer.parseInt(movies[0]));
+		movie.setId((long) Integer.parseInt(movies[0]));
 		movie.setName(movies[1].substring(0, movies[1].lastIndexOf("(") - 1));
 		movie.setYear(movies[1].substring(movies[1].lastIndexOf("(") + 1,
 				movies[1].lastIndexOf(")")));

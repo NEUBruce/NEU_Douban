@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
             User currentUser = userService.selectUserByName(user);
             if (currentUser != null) {
                 //登录成功
-                session.setAttribute("user", user);
+                session.setAttribute("user", currentUser);
                 // 构造登录成功的 JSON 响应
                 String successResponse = objectMapper.writeValueAsString(
                         new LoginResponse("success", "Login successful", currentUser)
