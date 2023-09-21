@@ -1,4 +1,5 @@
 body{
+    /*zoom: 0.75;*/
     background-color: rgb(245, 245, 245);
 }
 .search-container h1{
@@ -32,11 +33,11 @@ body{
     text-indent: 20px;
 }
 
-.search-button{
+.search-button1{
     background-image: url("../image/search.png");
-    background-color: #ffffff;
-    height: 44px;
-    width: 44px;
+    background-color: #000000;
+    height: 42px;
+    width: 42px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     border-left: 1px solid #ccc;

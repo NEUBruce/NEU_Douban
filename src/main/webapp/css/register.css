@@ -1,4 +1,5 @@
 body {
+    /*zoom: 0.75;*/
     font-family: "宋体", Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -29,8 +30,8 @@ body {
 
 .header {
     font-family: "华文新魏";
-    position: absolute;
-    top: 80px;
+    position: relative;
+    /*top: 80px;*/
     text-align: center;
     color: rgb(31, 185, 206);
     padding: 20px 0;
@@ -38,6 +39,7 @@ body {
     font-weight: bolder;
     width: 100%; /* 让标题横向充满页面 */
     order: 1; /* 设置标题在页面最上方 */
+    margin-bottom: 20px;
 }
 
 .login-container {

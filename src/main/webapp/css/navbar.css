@@ -57,6 +57,38 @@ header h1 {
 
 }
 
+#search{
+
+    width: 200px;
+    padding: 10px 0px;
+    margin-left: 330px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    /*border-top-right-radius: 5px; !* 圆化左上角 *!*/
+    /*border-bottom-right-radius: 5px; !* 圆化左下角 *!*/
+    transition: border-color 0.3s;
+    text-indent: 7px;
+}
+.search-button{
+    padding: 13px 0px;
+    margin-left: -5px;
+    background-image: url("../image/search.png");
+    /*border: 2px solid #000;*/
+    /*background-color: #818181;*/
+    height: 37px;
+    width: 37px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-size: contain; /* 根据按钮大小自适应背景图片尺寸 */
+    background-repeat: no-repeat; /* 防止图片重复平铺 */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -142,18 +174,6 @@ footer {
 /*.dropdown:hover .dropdown-content {*/
 /*    display: block;*/
 /*}*/
-
-#search{
-    width: 200px;
-    padding: 10px;
-    margin-left: 330px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    /*border-top-right-radius: 5px; !* 圆化左上角 *!*/
-    /*border-bottom-right-radius: 5px; !* 圆化左下角 *!*/
-    transition: border-color 0.3s;
-}
 
 /*#search-image{*/
 /*    !*background-size: contain; !* 根据按钮大小自适应背景图片尺寸 *!*!*/

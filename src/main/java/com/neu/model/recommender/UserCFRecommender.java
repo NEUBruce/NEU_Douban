@@ -19,8 +19,8 @@ public class UserCFRecommender {
 		List<RecommendedItem> recommendations = null;
 		try {
 			DataModel model = DataModelUtil.getPreferenceDataModel();//构造数据模型
-			UserSimilarity similarity = new PearsonCorrelationSimilarity(model);//用PearsonCorrelation 算法计算用户相似度
-			UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);//计算用户的“邻居”，这里将与该用户最近距离为 3 的用户设置为该用户的“邻居”。
+			UserSimilarity similarity = new UncenteredCosineSimilarity(model);//用PearsonCorrelation 算法计算用户相似度
+			UserNeighborhood neighborhood = new NearestNUserNeighborhood(100, similarity, model);//计算用户的“邻居”，这里将与该用户最近距离为 3 的用户设置为该用户的“邻居”。
 			Recommender recommender = new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, similarity));//采用 CachingRecommender 为 RecommendationItem 进行缓存
 			recommendations = recommender.recommend(id, size);//得到推荐的结果，size是推荐结果的数目
 		} catch (Exception e) {

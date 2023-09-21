@@ -1,5 +1,6 @@
 body{
     /*background-color: rgb(240,240,240);*/
+    /*zoom: 0.75;*/
     background-color: rgb(245, 245, 245);
 }
 .detail h1{
@@ -47,11 +48,11 @@ body{
     margin-left: 5px;/* 文本居中对齐 */
 
 }
-.search-button{
+.search-button1{
     background-image: url("../image/search.png");
     /*background-color: #818181;*/
-    height: 42px;
-    width: 42px;
+    height: 44px;
+    width: 44px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     border-left: 1px solid #ccc;

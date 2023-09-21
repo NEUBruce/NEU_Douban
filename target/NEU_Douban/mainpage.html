@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
 </head>
-<script src="js/refresh_recommend.js"></script>
+<script src="js/movie_recommend.js"></script>
 <script src="js/jquery-3.7.1.min.js"></script>
 <body>
     <div class="navbar">
@@ -16,6 +16,7 @@
 
 <!--        <img src="image/search.jpg" id="search-image"></img>-->
         <input type="text" id="search" placeholder="Please input search key word">
+        <button class="search-button" id="search-button"></button>
 <!--        <div class="dropdown">-->
 <!--            <button class="dropbtn">Projects-->
 <!--                <i class="fa fa-caret-down"></i>-->
@@ -30,31 +31,29 @@
         <div id="movies">
             <div class="movie-box">
                 <img src="image/movie1.jpg" class="movie" id="movie-poster-1" alt="电影海报 1">
-                <label for="movie-poster-1" class="movie-label">I'm not the God of Medicine</label>
+                <label for="movie-poster-1" id="movie-label-1" class="movie-label"></label>
             </div>
             <div class="movie-box">
                 <img src="image/movie2.jpg" class="movie" id="movie-poster-2" alt="电影海报 2">
-                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+                <label for="movie-poster-2" id="movie-label-2" class="movie-label"></label>
             </div>
             <div class="movie-box">
-                <img src="image/movie2.jpg" class="movie" id="movie-poster-3" alt="电影海报 3">
-                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+                <img src="image/movie3.jpg" class="movie" id="movie-poster-3" alt="电影海报 3">
+                <label for="movie-poster-2" id="movie-label-3" class="movie-label"></label>
             </div>
             <div class="movie-box">
-                <img src="image/movie2.jpg" class="movie" id="movie-poster-4" alt="电影海报 4">
-                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+                <img src="image/movie4.jpg" class="movie" id="movie-poster-4" alt="电影海报 4">
+                <label for="movie-poster-2" id="movie-label-4" class="movie-label"></label>
             </div>
             <div class="movie-box">
-                <img src="image/movie2.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
-                <label for="movie-poster-2" class="movie-label">Auburnheimer</label>
+                <img src="image/movie5.jpg" class="movie" id="movie-poster-5" alt="电影海报 5">
+                <label for="movie-poster-2" id="movie-label-5" class="movie-label"></label>
             </div>
-
-
 
         </div>
         <div id="btn-container">
             <img src="image/update.jpg" id="next-image">
-            <button id="movie-next">Change A Batch</button>
+            <button id="movie-next" onclick="movie_recommend()">Change A Batch</button>
         </div>
     </div>
 
@@ -93,6 +92,6 @@
 </body>
 
 <script>
-    refresh_recommend()
+    movie_recommend()
 </script>
 </html>
