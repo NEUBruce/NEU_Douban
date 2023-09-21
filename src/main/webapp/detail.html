@@ -11,11 +11,15 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
             rel="stylesheet"
-    />q
+    />
     <title>Movie</title>
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/detail.css">
 <!--    <link rel="stylesheet" type="text/css" href="css/star.css">-->
+    <script scr="js/jquery-3.7.1.min.js"></script>
+    <script scr="js/jquery.backstretch.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/detail.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -40,7 +44,7 @@
         <img src="image/movie2.jpg" class="movie-photo">
         <img src="image/fenge.jpg" class="fenge">
         <div class="detail">
-            <h1>Auburnheimer</h1>
+            <h1 id="movie-name"></h1>
 
             <div class="container-average">
             <h2 class="rank">Average Rank: </h2>
@@ -61,8 +65,8 @@
                 </div>
             </div>
 
-            <h2 class="time">Released Time: 2023-9-20</h2>
-            <h2 class="category">Category: History</h2>
+            <h2 class="time" id="time"></h2>
+            <h2 class="category" id="category"></h2>
 <!--             star-->
             <div class="star-wrapper">
                 <p id="message">Rate This Movie</p>
@@ -96,7 +100,6 @@
         </div>
     </div>
     <!-- Script -->
-    <script src="js/detail.js"></script>
     <script src="js/star.js"></script>
 </body>
 </html>

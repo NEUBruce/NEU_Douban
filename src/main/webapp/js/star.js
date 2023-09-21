@@ -79,11 +79,7 @@ const ratingUpdate = (start, end, active) => {
     }
 };
 
-submitButton.addEventListener("click", () => {
-    submitSection.classList.remove("hide");
-    submitSection.classList.add("show");
-    submitButton.disabled = true;
-});
+
 window.onload = () => {
     submitButton.disabled = true;
     submitSection.classList.add("hide");

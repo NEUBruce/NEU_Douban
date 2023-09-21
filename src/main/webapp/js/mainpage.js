@@ -1,12 +1,83 @@
-// 获取图像元素
-const moviePoster = document.getElementById('movie-poster-1');
+window.onload = function() {
+    addFriendListener();
+    friendRecommend();
+}
+let friends=[]
+function addFriendListener(){
+    const buttons = document.getElementsByClassName('add-button');
+    let isToggled = false;
 
-// 定义详细信息页的 URL
-const detailedPageUrl = 'http://localhost:8080/NEU_Douban_war/detail.html';
+    Array.from(buttons).forEach(function(button,index) {
+        button.addEventListener('click', () => {
+            if (isToggled) {
+                button.style.backgroundColor = "rgb(31, 185, 206)"; // 恢复原始颜色
+                button.textContent = 'Add'; // 恢复原始文本
 
-// 添加点击事件处理程序
-moviePoster.addEventListener('click', function() {
-    // 在点击时跳转到详细信息页
-    const imageUrl = moviePoster.getAttribute('src');
-    window.location.href = detailedPageUrl+"?image=${encodeURIComponent(imageUrl)}";
-});
+                //ajax
+                let param ={
+
+                }
+                $.ajax({
+                    url: "http://localhost:8080/addFriends",
+                    method: "post",
+                    contentType: "application/json",
+                    success: (data) => {
+
+
+                    },
+                    error: (xhr, status, error) => {
+                        alert("Error: " + error);
+                    }
+                })
+            } else {
+                button.style.backgroundColor = 'rgb(241,116,116)'; // 设置为红色背景
+                button.textContent = 'Cancel'; // 设置文本为 "Cancel"
+
+                $.ajax({
+                    url: "http://localhost:8080/delFriends",
+                    method: "post",
+                    contentType: "application/json",
+                    success: (data) => {
+
+
+                    },
+                    error: (xhr, status, error) => {
+                        alert("Error: " + error);
+                    }
+                })
+            }
+
+            isToggled = !isToggled; // 切换状态
+        });
+    });
+
+
+}
+
+function friendRecommend(){
+
+    $.ajax({
+        url: "http://localhost:8080/friendRecommendServlet",
+        param:{
+          id: this.id, //userid怎么获取
+          size: 8
+        },
+        method: "get",
+        contentType: "application/json",
+        success: (data) => {
+            console.log(data)
+            friends = data;
+            //fill
+            for (let i = 1; i <= 4; i++) {
+                let friend = data[i - 1];
+                $("#movie-label-" + i).text(friend.name);
+            }
+        },
+        error: (xhr, status, error) => {
+            // 处理 AJAX 请求失败的情况
+            alert("Error: " + error);
+        }
+    })
+
+
+}

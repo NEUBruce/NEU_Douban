@@ -43,7 +43,7 @@ body{
     margin: 10px 20px 10px 20px;
 }
 .movie-label{
-    font-family: Arial;
+    font-family: "Book Antiqua";
     /*border: 2px solid #000;*/
 }
 #movies{
@@ -173,7 +173,7 @@ body{
     object-position: top;
 }
 .person-label{
-    font-family: Arial;
+    font-family: "Book Antiqua";
     margin-top: 3px;
     margin-bottom: 10px;
 }

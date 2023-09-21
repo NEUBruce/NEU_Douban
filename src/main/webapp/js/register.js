@@ -38,7 +38,7 @@ function register() {
 
         // 使用AJAX将JSON数据发送到后端
         $.ajax({
-            url: "http://localhost:8889/register",
+            url: "http://localhost:8080/register",
             method: "POST",
             data: JSON.stringify(userData), // 将JSON对象转换为字符串
             contentType: "application/json",
@@ -47,7 +47,7 @@ function register() {
                 if (data && data.message === "Successfully registered") {
                     alert("Registration successful. Redirecting to login page.");
                     // 成功注册后，重定向到登录页面
-                    window.location.href = "http://localhost:8889/login.html";
+                    window.location.href = "http://localhost:8080/login.html";
                 } else {
                     alert("Registration failed. Please try again.");
                 }

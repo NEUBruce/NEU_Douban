@@ -9,6 +9,7 @@
 </head>
 <script src="js/movie_recommend.js"></script>
 <script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/mainpage.js"></script>
 <body>
     <div class="navbar">
         <a href="mainpage.html" id="personal-center"></a>
@@ -64,22 +65,22 @@
         <div id="friends" class="friends">
             <div class="person-box">
                 <img src="image/person1.jpg" class="photo" id="person1"></img>
-                <label for="person1" class="person-label">Amy</label>
+                <label for="person1" class="person-label" id="person-label-1">Amy</label>
                 <button class="add-button">Add</button>
             </div>
             <div class="person-box">
                 <img src="image/person2.jpg" class="photo" id="person2"></img>
-                <label for="person2" class="person-label">Elizabeth</label>
+                <label for="person2" class="person-label" id="person-label-2">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
             <div class="person-box">
                 <img src="image/person2.jpg" class="photo" id="person3"></img>
-                <label for="person3" class="person-label">Elizabeth</label>
+                <label for="person3" class="person-label" id="person-label-3">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
             <div class="person-box">
                 <img src="image/person2.jpg" class="photo" id="person4"></img>
-                <label for="person4" class="person-label">Elizabeth</label>
+                <label for="person4" class="person-label" id="person-label-4">Elizabeth</label>
                 <button class="add-button">Add</button>
             </div>
         </div>
@@ -93,5 +94,9 @@
 
 <script>
     movie_recommend()
+    clickChange()
+</script>
+<script>
+    clickChange()
 </script>
 </html>
