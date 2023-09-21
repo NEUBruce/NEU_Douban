@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/addFriends")
+@WebServlet("/delFriends")
 public class DelFriendsServlet extends HttpServlet{
     private UserService userService = new UserService();
     private ObjectMapper objectMapper = new ObjectMapper(); // 初始化ObjectMapper

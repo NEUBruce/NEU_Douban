@@ -20,20 +20,18 @@ public class UserBasedRecommender {
             // 使用余弦相似度计算用户相似度
             UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
 
-            UserSimilarity mixedSimilarity = new GenericUserSimilarity()
-
-            // 输出用户相似度
-            for (long userID1 : similarityMatrix.keySet()) {
-                FastByIDMap<Double> userSimilarities = similarityMatrix.get(userID1);
-                for (long userID2 : userSimilarities.keySet()) {
-                    double similarityScore = userSimilarities.get(userID2);
-                    System.out.println("User " + userID1 + " and User " + userID2 + " have similarity score: " + similarityScore);
-                }
-            }
+//            similarity.userSimilarity();
+//
+//            // 输出用户相似度
+//            for (long userID1 : similarityMatrix.keySet()) {
+//                FastByIDMap<Double> userSimilarities = similarityMatrix.get(userID1);
+//                for (long userID2 : userSimilarities.keySet()) {
+//                    double similarityScore = userSimilarities.get(userID2);
+//                    System.out.println("User " + userID1 + " and User " + userID2 + " have similarity score: " + similarityScore);
+//                }
+//            }
         } catch (IOException | TasteException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 

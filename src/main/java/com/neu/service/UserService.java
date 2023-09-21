@@ -24,8 +24,11 @@ public class UserService {
     public User selectUserByName(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        User selectedUser = mapper.selectUserByName(user);
         sqlSession.close();
-        return mapper.selectUserByName(user);
+
+        return selectedUser;
     }
 
     public int insertUser(User user){
