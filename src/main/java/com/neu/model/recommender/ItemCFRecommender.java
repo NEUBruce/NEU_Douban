@@ -21,7 +21,6 @@ public class ItemCFRecommender {
 			Recommender recommender = new GenericItemBasedRecommender(model, similarity);//构造推荐引擎  
 			recommendations = recommender.recommend(userID, size);//得到推荐结果
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return recommendations;
