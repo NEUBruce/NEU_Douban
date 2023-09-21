@@ -24,24 +24,35 @@ public class MovieService {
     public Movie selectMovieById(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        sqlSession.close();
         return mapper.selectMovieById(movie);
     }
 
     public int addMovie(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        sqlSession.close();
         return mapper.addMovie(movie);
     }
 
     public int modifyMovie(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        sqlSession.close();
         return mapper.modifyMovie(movie);
     }
 
     public int deleteMovieById(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        sqlSession.close();
         return mapper.deleteMovieById(movie);
+    }
+
+    public List<Movie> searchMovie(String searchMessage){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        sqlSession.close();
+        return mapper.searchMovie(searchMessage);
     }
 }

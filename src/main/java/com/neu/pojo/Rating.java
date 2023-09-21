@@ -6,6 +6,16 @@ public class Rating {
 	private int rating;
 	private int timestamp;
 
+	public Rating(int user_id, int movie_id, int rating, int timestamp) {
+		this.user_id = user_id;
+		this.movie_id = movie_id;
+		this.rating = rating;
+		this.timestamp = timestamp;
+	}
+
+	public Rating() {
+	}
+
 	public int getUser_id() {
 		return this.user_id;
 	}

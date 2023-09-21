@@ -1,4 +1,4 @@
-function    login() {
+function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
@@ -11,21 +11,21 @@ function    login() {
             password: password
         }),
         contentType: "application/json",
-        success: (data)=>{
-            console.log(data);
-            alert("Succeed!")
-            window.location.href="http://localhost:8080/"
+        success: (data) => {
+            if (data.status === "success") {
+                alert("Login Succeed!");
+                window.location.href = "http://localhost:8080/index.html";
+            } else {
+                alert("Login Failed: " + data.message);
+            }
+        },
+        error: (xhr, status, error) => {
+            // 处理 AJAX 请求失败的情况
+            alert("Error: " + error);
         }
     })
-    return false
 }
 
 function register() {
-    window.location.href="register.html";
-}
-
-function test() {
-    $.ajax({
-        url: "http://localhost:8080/testServlet"
-    })
+    window.location.href="register.jsp";
 }

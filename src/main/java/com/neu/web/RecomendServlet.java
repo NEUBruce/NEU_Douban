@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.neu.model.recommender.MyItemBasedRecommender;
 import com.neu.model.recommender.MySlopeOneRecommender;
-import com.neu.model.recommender.MyUserBasedRecommender;
+import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.MovieInfo;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 
@@ -37,9 +37,9 @@ public class RecomendServlet extends HttpServlet {
 		//推荐电影的List
 		List<RecommendedItem> recommendation = null;
 		if(recommendType.equals("userBased")){//基于用户
-			MyUserBasedRecommender mubr = new MyUserBasedRecommender();
+			UserCFRecommender mubr = new UserCFRecommender();
 			//拿到推荐的电影
-			recommendation = mubr.userBasedRecommender(userID,size);
+			recommendation = mubr.getUserCFRecommender(userID,size);
 		}else if(recommendType.equals("itemBased")){//基于内容
 			MyItemBasedRecommender mibr = new MyItemBasedRecommender();
 			//拿到推荐的电影
