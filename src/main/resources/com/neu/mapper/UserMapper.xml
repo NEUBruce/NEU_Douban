@@ -12,6 +12,7 @@
         <result column="vocation" property="vocation"/>
         <result column="zip_code" property="zipCode"/>
         <result column="age" property="age"/>
+        <result column="frequency" property="frequencyInfo"/>
     </resultMap>
     <select id="selectAllUser" resultMap="userResultMap">
         select * from user
