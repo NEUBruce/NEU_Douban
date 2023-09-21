@@ -1,0 +1,112 @@
+.search-container h1{
+    color: #414141;
+}
+
+.search-container{
+    background-color: rgba(160, 203, 213,0.6);
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center; !* 水平居中对齐 *!*/
+    align-items: center;
+}
+.search-container h1{
+    margin-left: 350px;
+    color: #333333;
+}
+
+.search-text{
+    margin-left: 50px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    /*transition: border-color 0.3s;*/
+    height: 42px;
+    width: 600px;
+    font-family: Arial;
+    font-size: medium;
+    /*padding: 0px 50px 0px 0px;*/
+    text-indent: 20px;
+}
+
+.search-button{
+    background-image: url("../image/search.png");
+    background-color: #ffffff;
+    height: 44px;
+    width: 44px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: 1px solid #ccc;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-size: cover; /* 根据按钮大小自适应背景图片尺寸 */
+    background-repeat: no-repeat; /* 防止图片重复平铺 */
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    /*align-self: center;*/
+}
+.result{
+    height: 200px;
+    width: 650px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    margin-top: 35px;
+    margin-left: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    /*子元素布局*/
+    display: flex;
+    flex-direction: row;
+}
+.movie-photo{
+    max-height: 160px;
+    width: auto;
+    margin-left: 70px;
+    margin-top: 20px;
+    margin-right: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+    /*padding: -10px 0px 0px -10px;*/
+}
+/*.detail > * {*/
+/*    margin: 0;*/
+/*}*/
+.rank-box{
+    /*border: 2px solid #000;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*justify-items: flex-start;*/
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+/*.rank-box h3{*/
+/*    border: 2px solid #000;*/
+/*}*/
+.movie-name{
+    margin-top: 27px;
+    margin-bottom: 0;
+}
+
+.time{
+    /*border: 2px solid #000;*/
+    margin: 0;
+}
+.category{
+    /*border: 2px solid #000;*/
+    margin-top: 15px;
+}
+.fa-star {
+    /*border: 2px solid #000;*/
+    font-size: 1.2em;
+    color: #ffd700;
+}
