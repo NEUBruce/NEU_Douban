@@ -5,7 +5,9 @@ body{
 .search-container h1{
     color: #414141;
 }
-
+.inactive {
+    display: none;
+}
 .search-container{
     background-color: rgba(160, 203, 213,0.6);
     height: 150px;
