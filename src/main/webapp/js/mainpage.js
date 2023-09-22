@@ -12,32 +12,14 @@ function addFriendListener(){
             if (isToggled) {
                 button.style.backgroundColor = "rgb(31, 185, 206)"; // 恢复原始颜色
                 button.textContent = 'Subscribe'; // 恢复原始文本
-
+                // console.log(friends[index].userId)
                 //ajax
-                $.ajax({
-                    url: "http://localhost:8080/addFriends",
-                    method: "post",
-                    contentType: "application/json",
-                    param:{
-                        friendId: friends[index].id,
-                    },
-                    success: (data) => {
-                        alert("Subscribe Success");
-                    },
-                    error: (xhr, status, error) => {
-                        alert("Error: " + error);
-                    }
-                })
-            } else {
-                button.style.backgroundColor = 'rgb(241,116,116)'; // 设置为红色背景
-                button.textContent = 'Cancel'; // 设置文本为 "Cancel"
-
                 $.ajax({
                     url: "http://localhost:8080/delFriends",
                     method: "post",
                     contentType: "application/json",
-                    param:{
-                        // friendId: ,
+                    data:{
+                        friendId: friends[index].userId,
                     },
                     xhrFields: {
                         withCredentials: true // 包括Cookie
@@ -49,6 +31,25 @@ function addFriendListener(){
                         alert("Error: " + error);
                     }
                 })
+            } else {
+                button.style.backgroundColor = 'rgb(241,116,116)'; // 设置为红色背景
+                button.textContent = 'Cancel'; // 设置文本为 "Cancel"
+                $.ajax({
+                    url: "http://localhost:8080/addFriends",
+                    method: "post",
+                    contentType: "application/json",
+                    data:{
+                        friendId: friends[index].userId,
+                    },
+                    success: (data) => {
+
+                        alert("Subscribe Success");
+                    },
+                    error: (xhr, status, error) => {
+                        alert("Error: " + error);
+                    }
+                })
+
             }
 
             isToggled = !isToggled; // 切换状态
