@@ -2,6 +2,7 @@ package com.neu.service;
 
 import com.neu.mapper.MovieMapper;
 import com.neu.mapper.UserMapper;
+import com.neu.model.recommender.MixedRecommender;
 import com.neu.model.recommender.ModelCFRecommender;
 import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.Movie;
@@ -91,21 +92,10 @@ public class MovieService {
 
     public List<Movie> recommendMovie(User user, int size) {
         //检测是否冷启动
+        MixedRecommender recommender = new MixedRecommender(user);
 
 
-        List<RecommendedItem> movieIds = userCFRecommender.getUserCFRecommender(user.getUserId(), size);
-        List<Movie> movies = new ArrayList<>();
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
 
-        for (RecommendedItem item : movieIds) {
-            Movie movie = new Movie();
-            movie.setId(item.getItemID());
-            movie = mapper.selectMovieById(movie);
-            movies.add(movie);
-        }
-        sqlSession.close();
-
-        return movies;
+        return recommender.recommend();
     }
 }

@@ -54,7 +54,9 @@ public class MovieRecommendServlet extends HttpServlet {
 //
 //        }
 
-        movies = movieService.top100Movies();
+        movies = movieService.recommendMovie(user, 100);
+
+        System.out.println(movies);
 
         // 创建一个Random对象
         Random random = new Random();

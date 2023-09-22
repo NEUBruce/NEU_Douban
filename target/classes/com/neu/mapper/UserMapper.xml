@@ -50,6 +50,10 @@
     <insert id="addFriends" parameterType="com.neu.pojo.User">
         insert into relation values(#{userId},#{ownerId},#{friendId})
     </insert>
+    <insert id="importUsers">
+        insert into user (id, username, password, gender, vocation, zip_code, age, frequency)
+        values (#{userId}, #{username}, #{password}, #{gender}, #{vocation}, #{zipCode}, #{age}, #{frequencyInfo})
+    </insert>
 
     <delete id="deleteFriends">
         delete r from relation r join user u on u.id=r.ownerId

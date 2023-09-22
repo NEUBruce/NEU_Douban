@@ -51,7 +51,7 @@ public class ImportUsers {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
         for (User user : users) {
-            mapper.insertUser(user);
+            mapper.importUsers(user);
         }
 
         sqlSession.commit();
