@@ -57,7 +57,6 @@
     </c:forEach>
 </div>
 <!-- Script -->
-<script src="js/detail.js"></script>
 <script src="js/star.js"></script>
 </body>
 </html>
