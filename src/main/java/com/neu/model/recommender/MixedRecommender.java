@@ -13,6 +13,8 @@ public class MixedRecommender {
     private User currentUser;
     private RatingService ratingService = new RatingService();
     private MovieService movieService = new MovieService();
+    private UserCFRecommender userCFRecommender = new UserCFRecommender();
+    private ItemCFRecommender itemCFRecommender = new ItemCFRecommender();
 
     public MixedRecommender(User currentUser) {
         this.currentUser = currentUser;
@@ -24,6 +26,7 @@ public class MixedRecommender {
             // 冷启动就选取评分最高前100
             return movieService.top100Movies();
         } else {
+
 
         }
 

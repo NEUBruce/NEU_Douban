@@ -23,8 +23,8 @@
     </select>
 
     <insert id="insertUser" parameterType="com.neu.pojo.User">
-        insert into user (username, password, gender, vocation, zip_code, age)
-        values (#{username}, #{password}, #{gender}, #{vocation}, #{zipCode}, #{age})
+        insert into user (username, password, gender, vocation, zip_code, age, frequency)
+        values (#{username}, #{password}, #{gender}, #{vocation}, #{zipCode}, #{age}, #{frequencyInfo})
     </insert>
 
     <update id="modifyUser">
@@ -42,7 +42,7 @@
     <select id="selectAllFriends" resultMap="userResultMap">
         select u.userId,u.username,u.gender,u.vocation,u.zipCode,u.age from user u join relation r on u.id=r.ownerId
     </select>
-    <select id="selectUserById" resultType="com.neu.pojo.User">
+    <select id="selectUserById" resultMap="userResultMap">
         select *
         from user where id = #{userId};
     </select>

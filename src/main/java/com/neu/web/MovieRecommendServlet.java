@@ -1,7 +1,6 @@
 package com.neu.web;
 
 import com.alibaba.fastjson.JSON;
-import com.mysql.cj.Session;
 import com.neu.pojo.History;
 import com.neu.pojo.Movie;
 import com.neu.pojo.User;
@@ -14,6 +13,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @WebServlet("/movieRecommendServlet")
 public class MovieRecommendServlet extends HttpServlet {
@@ -26,31 +26,53 @@ public class MovieRecommendServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         List<Movie> movies;
-        if(session.getAttribute("updateRecommend") == null) {
-            // 生成推荐池
-            movies = movieService.recommendMovie(user, 100);
-            session.setAttribute("moviePool", movies);
-            session.setAttribute("updateRecommend", false);
+//        System.out.println(1111);
+//        if(session.getAttribute("updateRecommend") == null) {
+//            // 生成推荐池
+//            movies = movieService.recommendMovie(user, 100);
+//            System.out.println(movies);
+//            session.setAttribute("moviePool", movies);
+//            session.setAttribute("updateRecommend", false);
+//
+//            movies = getRandomMovie(movies, user);
+//
+//        }else {
+//            boolean updateRecommend = (boolean) session.getAttribute("updateRecommend");
+//            if (!updateRecommend) {
+//                List<Movie> currentPool = (List<Movie>) session.getAttribute("moviePool");
+//
+//                movies = getRandomMovie(currentPool, user);
+//
+//            }else {
+//                // 生成新推荐池
+//                movies = movieService.recommendMovie(user, 100);
+//                session.setAttribute("moviePool", movies);
+//                session.setAttribute("updateRecommend", false);
+//
+//                movies = getRandomMovie(movies, user);
+//            }
+//
+//        }
 
-            movies = getRandomMovie(movies, user);
+        movies = movieService.top100Movies();
 
-        }else {
-            boolean updateRecommend = (boolean) session.getAttribute("updateRecommend");
-            if (!updateRecommend) {
-                List<Movie> currentPool = (List<Movie>) session.getAttribute("moviePool");
+        // 创建一个Random对象
+        Random random = new Random();
 
-                movies = getRandomMovie(currentPool, user);
+        // 存储随机选择的5个元素的列表
+        ArrayList<Movie> selectedElements = new ArrayList<>();
 
-            }else {
-                // 生成新推荐池
-                movies = movieService.recommendMovie(user, 100);
-                session.setAttribute("moviePool", movies);
-                session.setAttribute("updateRecommend", false);
+        // 从ArrayList中随机选择5个元素
+        int numElementsToSelect = 5;
+        while (selectedElements.size() < numElementsToSelect) {
+            // 生成一个随机索引
+            int randomIndex = random.nextInt(movies.size());
 
-                movies = getRandomMovie(movies, user);
-            }
-
+            // 从ArrayList中移除选定的元素并添加到selectedElements列表中
+            selectedElements.add(movies.remove(randomIndex));
         }
+
+        movies = selectedElements;
 
 
         response.setContentType("application/json");
@@ -86,12 +108,41 @@ public class MovieRecommendServlet extends HttpServlet {
         movies = removeRepeat(movies, history);
 
         int alreadyGet = 0;
+
+        List<Movie> recommendMovies = new ArrayList<>();
+        while (alreadyGet <= 5) {
+            // 数量太少直接更新池子
+            if (movies.size() <= 5) {
+                movies = movieService.recommendMovie(user, 100);
+            }
+            String type = randomType(freqs);
+            Movie movie = selectMovieByType(type, movies);
+            if (movie == null) {
+                continue;
+            } else {
+                recommendMovies.add(movie);
+            }
+
+        }
+
+        return recommendMovies;
+    }
+
+    public String randomType(List<Double> freqs) {
         double randomValue = Math.random();
         double cumulativeProbability = 0.0;
         int selectedMovie = -1;
 
-        return null;
+        for (int i = 0; i < freqs.size(); i++) {
+            cumulativeProbability += freqs.get(i);
 
+            if (randomValue <= cumulativeProbability) {
+                selectedMovie = i;
+                break;
+            }
+        }
+
+        return "" + selectedMovie;
     }
 
     public List<Movie> removeRepeat(List<Movie> movies, List<History> histories) {
