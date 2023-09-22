@@ -35,4 +35,6 @@ public interface UserMapper {
 
     List<User> selectUserById(User user);
 
+    int importUsers(User user);
+
 }

@@ -37,7 +37,7 @@ body{
 
 .search-button1{
     background-image: url("../image/search.png");
-    background-color: #000000;
+    /*background-color: #000000;*/
     height: 42px;
     width: 42px;
     border-bottom-right-radius: 20px;
@@ -93,7 +93,7 @@ body{
     flex-direction: row;
     align-items: center;
     /*justify-items: flex-start;*/
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 0;
     margin: 0;
 }
@@ -115,6 +115,8 @@ body{
 }
 .fa-star {
     /*border: 2px solid #000;*/
+    margin-left: 3px;
+    margin-top: 5px;
     font-size: 1.2em;
     color: #ffd700;
 }
