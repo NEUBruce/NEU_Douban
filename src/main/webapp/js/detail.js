@@ -7,8 +7,8 @@ window.onload = function() {
 }
 function loadMovieInfo(){
     console.log("enter1")
-    starRank();
-    buttonSubmit();
+    // starRank();
+    // buttonSubmit();
     let currentUrl = window.location.href;
 
 // 从 URL 中解析出参数
@@ -25,7 +25,7 @@ function loadMovieInfo(){
         category += movie.type[i]+", ";
     }
     $("#category").text("Category: "+movie.typeInfo);
-
+    $("#average-score").text(movie.rate)
     //rate
     if(movie.rate !== 0 && movie.rate !== null){
         starRank();
@@ -38,13 +38,14 @@ function loadMovieInfo(){
 
 function starRank(){
     //movie's rank
-    // $("#average-score").text(movieInfo.rate);
-    // let rank = Math.round(movieInfo.rate);
+    $("#average-score").text(movieInfo.rate);
+    let rank = Math.round(movieInfo.rate);
     console.log("star")
     let starContainer1 = document.querySelectorAll(".star-container1");
-    let rank = 3;
+    // let rank = 3;
+
     //set the star active or inactive
-    for (let i = 0; i <= rank; i++) {
+    for (let i = 0; i < rank; i++) {
             starContainer1[i].classList.add("active");
             starContainer1[i].classList.remove("inactive");
             starContainer1[i].firstElementChild.className = "fa-star fa-solid";
@@ -98,7 +99,7 @@ function search() {
     var searchMessage = document.getElementById("search-text").value;
 
     $.ajax({
-        url: "http://localhost:8889/search",
+        url: "http://localhost:8080/search",
         method: "post",
         data: JSON.stringify({
             searchMessage:searchMessage,
