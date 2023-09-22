@@ -44,7 +44,7 @@ header h1 {
 }
 #personal-center{
     /*border: 2px solid #000;*/
-    background-image: url("../image/个人中心.png");
+    background-image: url("../image/center.png");
     /*max-height: 50px;*/
     /*width: auto;*/
     background-size: 23px 23px; /* 根据容器大小自适应背景图片尺寸 */
