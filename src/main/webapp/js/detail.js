@@ -1,14 +1,14 @@
 let movieInfo= [];
+
 addEventListener('load', loadMovieInfo);
 window.onload = function() {
-    console.log("enter")
     loadMovieInfo();
 
 }
 function loadMovieInfo(){
     console.log("enter1")
-    // starRank();
-    // buttonSubmit();
+    starRank();
+    buttonSubmit();
     let currentUrl = window.location.href;
 
 // 从 URL 中解析出参数
@@ -54,12 +54,17 @@ function starRank(){
 
 
 function buttonSubmit(){
-    $("#submit").addEventListener("click", () => {
-        $("#submit-section").classList.remove("hide");
-        $("#submit-section").classList.add("show");
+    console.log("button enter")
+    let starContainer1 = document.querySelectorAll(".star-container1");
+    let button = document.getElementById("submit");
+    let submit_section = document.getElementById("submit-section");
+
+    button.addEventListener("click", () => {
+        // submit_section.classList.remove("hide");
+        // submit_section.classList.add("show");
+        button.style.display = "none";
         $("#submit").disabled = true;
-
-
+        $("#message").text("Thanks for your ranting!")
         //calculate the active star
         let rank = 0;
         for (let i = 0; i <= 4; i++) {
@@ -73,13 +78,14 @@ function buttonSubmit(){
             url: "http://localhost:8080/rating",
             method: "post",
             contentType: "application/json",
-            param: {
-                movieID: movieInfo.id,
+            data: {
+                // movieID: movieInfo.id,
+                movieID: 2,
                 rating: rank
             },
             success: (data) => {
                 alert("Submit Success!");
-
+                console.log(rank)
             },
             error: (xhr, status, error) => {
                 alert("Error: " + error);
