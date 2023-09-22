@@ -10,4 +10,6 @@ public interface HistoryMapper {
     int addHistory(History history);
 
     List<History> selectHistoryByUserId(History history);
+
+    List<History> recent100History(History history);
 }

@@ -1,8 +1,10 @@
 package com.neu.web;
 
 import com.alibaba.fastjson.JSON;
+import com.mysql.cj.Session;
 import com.neu.pojo.Movie;
 import com.neu.pojo.User;
+import com.neu.service.HistoryService;
 import com.neu.service.MovieService;
 
 import javax.servlet.*;
@@ -14,11 +16,24 @@ import java.util.List;
 @WebServlet("/movieRecommendServlet")
 public class MovieRecommendServlet extends HttpServlet {
     MovieService movieService = new MovieService();
+
+    HistoryService historyService = new HistoryService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
 
-        List<Movie> movies = movieService.recommendMovie(user, 100);
+        HttpSession session = request.getSession();
+        List<Movie> movies;
+        if(session.getAttribute("updateRecommend") == null) {
+            // 生成推荐池
+             movies = movieService.recommendMovie(user, 100);
+            session.setAttribute("moviePool", movies);
+            session.setAttribute("updateRecommend", false);
+
+        }else {
+            movies = movieService.recommendMovie(user, 100);
+        }
+
 
         response.setContentType("application/json");
 
@@ -32,4 +47,9 @@ public class MovieRecommendServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doGet(request, response);
     }
+
+    public List<Movie> getRandomMovie(List<Movie> movies) {
+        return null;
+    }
+
 }

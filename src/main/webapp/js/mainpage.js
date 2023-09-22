@@ -58,10 +58,6 @@ function friendRecommend(){
 
     $.ajax({
         url: "http://localhost:8080/friendRecommendServlet",
-        param:{
-          id: this.id, //userid怎么获取
-          size: 8
-        },
         method: "get",
         contentType: "application/json",
         success: (data) => {

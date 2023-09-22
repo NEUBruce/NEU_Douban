@@ -25,4 +25,6 @@ public interface MovieMapper {
     List<Movie> searchMovie(String searchMessage);
 
     double calculateAverageRating(Movie movie);
+
+    List<Movie> top100Movie();
 }

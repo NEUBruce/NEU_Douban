@@ -81,6 +81,14 @@ public class MovieService {
         return avg;
     }
 
+    public List<Movie> top100Movies() {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        List<Movie> movies = mapper.top100Movie();
+        sqlSession.close();
+        return movies;
+    }
+
     public List<Movie> recommendMovie(User user, int size) {
         //检测是否冷启动
 

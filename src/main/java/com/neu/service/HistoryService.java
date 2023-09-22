@@ -23,4 +23,12 @@ public class HistoryService {
         return result;
 
     }
+
+    List<History> recent100(History history) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        HistoryMapper mapper = sqlSession.getMapper(HistoryMapper.class);
+        List<History> histories = mapper.recent100History(history);
+        sqlSession.close();
+        return histories;
+    }
 }

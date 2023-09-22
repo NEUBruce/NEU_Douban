@@ -13,9 +13,16 @@
         insert into recomend_history
         values (#{id}, #{movieId}, #{userId}, #{timestamp});
     </insert>
-    <select id="selectHistoryByUserId" resultType="com.neu.pojo.History">
+    <select id="selectHistoryByUserId" resultMap="historyResultMap">
         select *
         from recomend_history where userId = #{userId};
+    </select>
+    <select id="recent100History" resultMap="historyResultMap">
+        SELECT *
+        FROM recomend_history
+        WHERE userId = #{userId}
+        ORDER BY timestamp DESC
+        LIMIT 100;
     </select>
 
 
