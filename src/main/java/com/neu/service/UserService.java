@@ -58,6 +58,19 @@ public class UserService {
         return null;
     }
 
+    public User selectUserByNameAndPassword(User user){
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            User selectUser = mapper.selectUserByNameAndPassword(user);
+            sqlSession.commit();
+            sqlSession.close();
+            return selectUser;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public int insertUser(User user) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);

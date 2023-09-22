@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             user.setPassword(password);
 
             // 执行登录操作
-            User currentUser = userService.selectUserByName(user);
+            User currentUser = userService.selectUserByNameAndPassword(user);
             if (currentUser != null) {
                 //登录成功
                 session.setAttribute("user", currentUser);
