@@ -42,7 +42,7 @@
     <select id="selectAllFriends" resultMap="userResultMap">
         select u.userId,u.username,u.gender,u.vocation,u.zipCode,u.age from user u join relation r on u.id=r.ownerId
     </select>
-    <select id="selectUserById" resultType="com.neu.pojo.User">
+    <select id="selectUserById" resultMap="userResultMap">
         select *
         from user where id = #{userId};
     </select>

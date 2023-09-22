@@ -45,5 +45,11 @@
     <select id="calculateAverageRating" resultType="java.lang.Double">
         select avg(preference) from (select preference from movie_preferences where movieID = #{id}) as sub
     </select>
+    <select id="top100Movie" resultMap="movieResultMap">
+        SELECT *
+        FROM movies
+        ORDER BY rate DESC
+        LIMIT 100;
+    </select>
 
 </mapper>

@@ -153,6 +153,7 @@ public class UserService {
                 user.setUserId(id);
                 users.add(selectUserById(user).get(0));
             }
+            System.out.println(users);
 
             return users;
 

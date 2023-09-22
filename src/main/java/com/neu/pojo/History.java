@@ -14,6 +14,9 @@ public class History {
         this.timestamp = timestamp;
     }
 
+    public History() {
+    }
+
     public long getTimestamp() {
         return timestamp;
     }

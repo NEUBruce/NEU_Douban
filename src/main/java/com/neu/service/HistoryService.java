@@ -13,7 +13,7 @@ import java.util.List;
 
 public class HistoryService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
-    int addHistory(History history) {
+    public int addHistory(History history) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         history.setTimestamp(new Date().getTime());
         HistoryMapper mapper = sqlSession.getMapper(HistoryMapper.class);
@@ -24,7 +24,7 @@ public class HistoryService {
 
     }
 
-    List<History> recent100(History history) {
+    public List<History> recent100(History history) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         HistoryMapper mapper = sqlSession.getMapper(HistoryMapper.class);
         List<History> histories = mapper.recent100History(history);
