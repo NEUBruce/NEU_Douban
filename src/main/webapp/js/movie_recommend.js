@@ -28,14 +28,14 @@ function search() {
     var searchMessage = document.getElementById("search").value;
 
     $.ajax({
-        url: "http://localhost:8889/search",
+        url: "http://localhost:8080/search",
         method: "post",
         data: JSON.stringify({
             searchMessage:searchMessage,
         }),
         contentType: "application/json",
         success: (data) => {
-            window.location.href="http://localhost:8889/searchresult.jsp"
+            window.location.href="http://localhost:8080/searchresult.jsp"
         },
         error: (xhr, status, error) => {
             // 处理 AJAX 请求失败的情况
@@ -48,7 +48,7 @@ function clickChange(){
     const moviePosters = document.getElementsByClassName('movie');
 
 // 定义详细信息页的 URL
-    const detailedPageUrl = 'http://localhost:8889/detail.html';
+    const detailedPageUrl = 'http://localhost:8080/detail.html';
 
     Array.from(moviePosters).forEach(function(moviePoster,index) {
         moviePoster.addEventListener('click', function() {

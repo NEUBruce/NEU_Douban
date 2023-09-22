@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 addEventListener('load', loadMovieInfo);
 window.onload = function () {
     loadMovieInfo();
+
 }
 
 function loadMovieInfo() {
@@ -39,16 +40,16 @@ function loadMovieInfo() {
     $("#category").text("Category: " + movie.typeInfo);
     $("#average-score").text(movie.rate)
     //rate
-    if (movie.rate !== 0 && movie.rate !== null) {
+    if(movie.rate !== 0 && movie.rate !== null){
         starRank();
     }
-    buttonSubmit(movie);
+    buttonSubmit();
 }
 
 
 //star show
 
-function starRank() {
+function starRank(){
     //movie's rank
     $("#average-score").text(movieInfo.rate);
     let rank = Math.round(movieInfo.rate);
@@ -71,11 +72,7 @@ function buttonSubmit(movie) {
     var userJson = userInfoElement.getAttribute('data-user');
     var user = JSON.parse(userJson);
 
-    // 获取其他表单数据
-    var userId = document.getElementById('userId').value;
-    var movieId = movie.movieId;
-    var timestamp = new Date().getTime();
-
+function buttonSubmit(){
     console.log("button enter")
     let starContainer1 = document.querySelectorAll(".star-container1");
     let button = document.getElementById("submit");
@@ -90,13 +87,14 @@ function buttonSubmit(movie) {
         //calculate the active star
         let rank = 0;
         for (let i = 0; i <= 4; i++) {
-            if (starContainer1[i].classList.contains("active")) {
-                rank++;
+            if(starContainer1[i].classList.contains("active"))
+            {
+                rank ++;
             }
         }
 
         $.ajax({
-            url: "http://localhost:8889/rating",
+            url: "http://localhost:8080/rating",
             method: "post",
             data: JSON.stringify({
                 userId: userId,
@@ -132,7 +130,7 @@ function search() {
         }),
         contentType: "application/json",
         success: (data) => {
-            window.location.href = "../detail.html"
+            window.location.href="http://localhost:8080/detail.html"
         },
         error: (xhr, status, error) => {
             // 处理 AJAX 请求失败的情况

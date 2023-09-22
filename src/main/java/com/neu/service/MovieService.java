@@ -3,7 +3,6 @@ package com.neu.service;
 import com.neu.mapper.MovieMapper;
 import com.neu.mapper.UserMapper;
 import com.neu.model.recommender.MixedRecommender;
-import com.neu.model.recommender.ModelCFRecommender;
 import com.neu.model.recommender.UserCFRecommender;
 import com.neu.pojo.Movie;
 import com.neu.pojo.User;
@@ -93,8 +92,6 @@ public class MovieService {
     public List<Movie> recommendMovie(User user, int size) {
         //检测是否冷启动
         MixedRecommender recommender = new MixedRecommender(user);
-
-
 
         return recommender.recommend();
     }

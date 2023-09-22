@@ -26,7 +26,7 @@ public class MovieRecommendServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         List<Movie> movies;
-//        System.out.println(1111);
+
 //        if(session.getAttribute("updateRecommend") == null) {
 //            // 生成推荐池
 //            movies = movieService.recommendMovie(user, 100);

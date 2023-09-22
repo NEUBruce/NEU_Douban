@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet {
             if (currentUser != null) {
                 //登录成功
                 session.setAttribute("user", currentUser);
+                System.out.println(currentUser);
                 // 构造登录成功的 JSON 响应
                 String successResponse = objectMapper.writeValueAsString(
                         new LoginResponse("success", "Login successful", currentUser)

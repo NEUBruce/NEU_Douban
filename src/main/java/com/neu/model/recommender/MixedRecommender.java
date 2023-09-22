@@ -25,23 +25,25 @@ public class MixedRecommender {
     public List<Movie> recommend() {
 
         if(checkCoolRecommend()) {
-            System.out.println("Cool start!");
+            System.out.println("cold start");
             // 冷启动就选取评分最高前100
             return movieService.top100Movies();
         } else {
             System.out.println("hot start");
             List<RecommendedItem> userRecommend = userCFRecommender.getUserCFRecommender(currentUser.getUserId(), 50);
-            List<RecommendedItem> itemRecommend = itemCFRecommender.getItemCFRecommender(currentUser.getUserId(), 50);
+            // List<RecommendedItem> itemRecommend = itemCFRecommender.getItemCFRecommender(currentUser.getUserId(), 50);
 
+            System.out.println(userRecommend);
+            //System.out.println(itemRecommend);
             List<Movie> movies = new ArrayList<>();
 
-            for (RecommendedItem item : itemRecommend) {
-                Long id = item.getItemID();
-                Movie movie = new Movie();
-                movie.setId(id);
-                movie = movieService.selectMovieById(movie);
-                movies.add(movie);
-            }
+//            for (RecommendedItem item : itemRecommend) {
+//                Long id = item.getItemID();
+//                Movie movie = new Movie();
+//                movie.setId(id);
+//                movie = movieService.selectMovieById(movie);
+//                movies.add(movie);
+//            }
 
             for (RecommendedItem item : userRecommend) {
                 Long id = item.getItemID();
@@ -61,10 +63,12 @@ public class MixedRecommender {
     }
 
     private boolean checkCoolRecommend() {
+
         Rating rating = new Rating();
         rating.setUserId(currentUser.getUserId());
         System.out.println(rating.getUserId());
         List<Rating> historyRatings = ratingService.selectRatingByUserId(rating);
+        System.out.println(historyRatings);
         System.out.println("History rating: " + historyRatings);
         boolean allOnes = true;
         List<Integer> frequencies = currentUser.getFrequency();
