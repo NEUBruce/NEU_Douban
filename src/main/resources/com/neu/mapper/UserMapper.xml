@@ -18,6 +18,10 @@
         select * from user
     </select>
 
+    <select id="selectUserByNameAndPassword" resultMap="userResultMap" parameterType="com.neu.pojo.User">
+        select * from user where username=#{username} and password=#{password}
+    </select>
+
     <select id="selectUserByName" resultMap="userResultMap" parameterType="com.neu.pojo.User">
         select * from user where username=#{username}
     </select>

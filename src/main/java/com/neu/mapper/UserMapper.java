@@ -12,6 +12,8 @@ public interface UserMapper {
     //查询用户
     User selectUserByName(User user);
 
+    User selectUserByNameAndPassword(User user);
+
     //创建用户基本信息
     int insertUser(User user);
 
