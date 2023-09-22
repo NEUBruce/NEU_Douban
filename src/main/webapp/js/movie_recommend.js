@@ -11,7 +11,6 @@ function movie_recommend(){
             movies = data;
             for (let i = 1; i <= 5; i++) {
                 let movie = data[i - 1];
-
                 $("#movie-label-" + i).text(movie.name);
 
             }

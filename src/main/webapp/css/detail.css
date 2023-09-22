@@ -89,20 +89,25 @@ body{
 }
 
 .container-average{
-    border: 2px solid #000;
+    /*border: 2px solid #000;*/
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     /*margin-right: 10px;*/
 }
-.rank{
-    border: 2px solid #000;
+/*.rank{*/
+/*    border: 2px solid #000;*/
+/*}*/
+/*.star-container1{*/
+/*    border: 2px solid #000;*/
+/*}*/
+.average-score{
+    font-family: "Book Antiqua";
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
-.star-container1{
-    border: 2px solid #000;
-}
-
 /*border: 2px solid #000;*/
 /*star*/
 .star-wrapper {

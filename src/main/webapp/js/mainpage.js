@@ -11,19 +11,18 @@ function addFriendListener(){
         button.addEventListener('click', () => {
             if (isToggled) {
                 button.style.backgroundColor = "rgb(31, 185, 206)"; // 恢复原始颜色
-                button.textContent = 'Add'; // 恢复原始文本
+                button.textContent = 'Subscribe'; // 恢复原始文本
 
                 //ajax
-                let param ={
-
-                }
                 $.ajax({
                     url: "http://localhost:8080/addFriends",
                     method: "post",
                     contentType: "application/json",
+                    param:{
+                        friendId: friends[index].id,
+                    },
                     success: (data) => {
-
-
+                        alert("Subscribe Success");
                     },
                     error: (xhr, status, error) => {
                         alert("Error: " + error);
@@ -37,9 +36,14 @@ function addFriendListener(){
                     url: "http://localhost:8080/delFriends",
                     method: "post",
                     contentType: "application/json",
+                    param:{
+                        // friendId: ,
+                    },
+                    xhrFields: {
+                        withCredentials: true // 包括Cookie
+                    },
                     success: (data) => {
-
-
+                        alert("Cancel Success");
                     },
                     error: (xhr, status, error) => {
                         alert("Error: " + error);
@@ -60,13 +64,17 @@ function friendRecommend(){
         url: "http://localhost:8080/friendRecommendServlet",
         method: "get",
         contentType: "application/json",
+
         success: (data) => {
             console.log(data)
             friends = data;
             //fill
             for (let i = 1; i <= 4; i++) {
                 let friend = data[i - 1];
-                $("#person-label-" + i).text(friend.name);
+
+                $("#person-label-" + i).text(friend.age);
+                // console.log("#person-label-" + i)
+                // console.log(friend.age+"\n")
             }
         },
         error: (xhr, status, error) => {
