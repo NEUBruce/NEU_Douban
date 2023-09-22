@@ -22,6 +22,7 @@
 
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/searchresult.js"></script>
+<script src="js/star.js"></script>
 <body>
 <div class="navbar">
 
@@ -46,7 +47,7 @@
                 <c:set var="starCount" value="${movie.rate}" />
                 <c:forEach var="i" begin="1" end="5">
                     <div class="star-container ${i le starCount ? '' : 'inactive'}">
-                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-star fa-solid"></i>
                     </div>
                 </c:forEach>
             </div>
@@ -57,8 +58,7 @@
     </c:forEach>
 </div>
 <!-- Script -->
-<script src="js/detail.js"></script>
-<script src="js/star.js"></script>
+
 </body>
 </html>
 
