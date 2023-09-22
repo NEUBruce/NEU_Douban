@@ -44,8 +44,17 @@ public class SearchServlet extends HttpServlet {
 
         // 调用searchMovie方法执行查询
         List<Movie> searchResult = movieService.searchMovie(searchMessage);
+        // 对searchResult中的rate属性进行四舍五入处理
+        for (Movie movie : searchResult) {
+            double rate = movie.getRate();
+            int roundedRate = (int) Math.round(rate);
+            movie.setRate(roundedRate);
+        }
 
         // 将查询结果传递给JSP页面进行显示
         session.setAttribute("searchResult", searchResult);
+
+        //页面转发
+        request.getRequestDispatcher("searchresult.jsp").forward(request, response);
     }
 }
