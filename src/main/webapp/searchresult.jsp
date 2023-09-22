@@ -37,27 +37,29 @@
 </div>
 <div class="content-container">
     <c:forEach var="movie" items="${sessionScope.searchResult}">
-    <div class="result">
-        <img src="image/movie2.jpg" class="movie-photo">
-        <div id="detail" class="detail">
-            <h2 id="movie-name" class="movie-name">${movie.name}</h2>
-            <div id="rank-box" class="rank-box">
-                <h3 id="rank" class="rank">Average Rank: </h3>
-                <c:set var="starCount" value="${movie.rate}" />
-                <c:forEach var="i" begin="1" end="5">
-                    <div class="star-container ${i le starCount ? '' : 'inactive'}">
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                </c:forEach>
+        <a href="detail.html?movie=${movie.name}&year=${movie.year}&rate=${movie.rate}&typeInfo=${movie.typeInfo}">
+        <div class="result">
+            <img src="image/movie2.jpg" class="movie-photo">
+            <div id="detail" class="detail">
+                <h2 id="movie-name" class="movie-name">${movie.name}</h2>
+                <div id="rank-box" class="rank-box">
+                    <h3 id="rank" class="rank">Average Rank: </h3>
+                    <c:set var="starCount" value="${movie.rate}"/>
+                    <c:forEach var="i" begin="1" end="5">
+                        <div class="star-container ${i le starCount ? '' : 'inactive'}">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </c:forEach>
+                </div>
+                <h3 id="time" class="time">Released Time: ${movie.year}</h3>
+                <h3 id="category" class="category">Category: ${movie.typeInfo}</h3>
             </div>
-            <h3 id="time" class="time">Released Time: ${movie.year}</h3>
-            <h3 id="category" class="category">Category: ${movie.typeInfo}</h3>
+
         </div>
-    </div>
+        </a>
     </c:forEach>
 </div>
 <!-- Script -->
-<script src="js/detail.js"></script>
 <script src="js/star.js"></script>
 </body>
 </html>

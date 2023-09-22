@@ -118,3 +118,13 @@ body{
     font-size: 1.2em;
     color: #ffd700;
 }
+
+a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 继承父元素的字体颜色 */
+}
+
+/* 在超链接被点击后不改变颜色 */
+a:visited {
+    color: inherit; /* 继续继承父元素的字体颜色 */
+}
