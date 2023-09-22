@@ -1,11 +1,23 @@
-let movieInfo= [];
+let movieInfo = [];
+document.addEventListener("DOMContentLoaded", function() {
+// 获取电影信息参数
+    const movieName = getQueryParam("movie");
+    const movieYear = getQueryParam("year");
+    const movieRate = getQueryParam("rate");
+    const movieTypeInfo = getQueryParam("typeInfo");
+//更新页面信息
+    document.getElementById("movie-name").textContent = movieName;
+    document.getElementById("average-score").textContent = movieRate;
+    document.getElementById("time").textContent = "Released Time: " + movieYear;
+    document.getElementById("category").textContent = "Category: " + movieTypeInfo;
+});
 
 addEventListener('load', loadMovieInfo);
-window.onload = function() {
+window.onload = function () {
     loadMovieInfo();
-
 }
-function loadMovieInfo(){
+
+function loadMovieInfo() {
     console.log("enter1")
     // starRank();
     // buttonSubmit();
@@ -19,24 +31,24 @@ function loadMovieInfo(){
     movieInfo = movie;
 
     $("#movie-name").text(movie.name);
-    $("#time").text("Released Time: "+movie.year);
+    $("#time").text("Released Time: " + movie.year);
     let category = "";
-    for(let i = 0; i <= movie.type.length; i++){
-        category += movie.type[i]+", ";
+    for (let i = 0; i <= movie.type.length; i++) {
+        category += movie.type[i] + ", ";
     }
-    $("#category").text("Category: "+movie.typeInfo);
+    $("#category").text("Category: " + movie.typeInfo);
     $("#average-score").text(movie.rate)
     //rate
-    if(movie.rate !== 0 && movie.rate !== null){
+    if (movie.rate !== 0 && movie.rate !== null) {
         starRank();
     }
-    buttonSubmit();
+    buttonSubmit(movie);
 }
 
 
 //star show
 
-function starRank(){
+function starRank() {
     //movie's rank
     $("#average-score").text(movieInfo.rate);
     let rank = Math.round(movieInfo.rate);
@@ -46,15 +58,24 @@ function starRank(){
 
     //set the star active or inactive
     for (let i = 0; i < rank; i++) {
-            starContainer1[i].classList.add("active");
-            starContainer1[i].classList.remove("inactive");
-            starContainer1[i].firstElementChild.className = "fa-star fa-solid";
-            console.log("active")
+        starContainer1[i].classList.add("active");
+        starContainer1[i].classList.remove("inactive");
+        starContainer1[i].firstElementChild.className = "fa-star fa-solid";
+        console.log("active")
     }
 };
 
+function buttonSubmit(movie) {
+    // 获取用户信息
+    var userInfoElement = document.getElementById('user-info');
+    var userJson = userInfoElement.getAttribute('data-user');
+    var user = JSON.parse(userJson);
 
-function buttonSubmit(){
+    // 获取其他表单数据
+    var userId = document.getElementById('userId').value;
+    var movieId = movie.movieId;
+    var timestamp = new Date().getTime();
+
     console.log("button enter")
     let starContainer1 = document.querySelectorAll(".star-container1");
     let button = document.getElementById("submit");
@@ -69,15 +90,20 @@ function buttonSubmit(){
         //calculate the active star
         let rank = 0;
         for (let i = 0; i <= 4; i++) {
-            if(starContainer1[i].classList.contains("active"))
-            {
-                rank ++;
+            if (starContainer1[i].classList.contains("active")) {
+                rank++;
             }
         }
 
         $.ajax({
-            url: "http://localhost:8080/rating",
+            url: "http://localhost:8889/rating",
             method: "post",
+            data: JSON.stringify({
+                userId: userId,
+                movieId: movieId,
+                rank: rank,
+                timestamp: timestamp,
+            }),
             contentType: "application/json",
             data: {
                 // movieID: movieInfo.id,
@@ -102,11 +128,11 @@ function search() {
         url: "http://localhost:8080/search",
         method: "post",
         data: JSON.stringify({
-            searchMessage:searchMessage,
+            searchMessage: searchMessage,
         }),
         contentType: "application/json",
         success: (data) => {
-            window.location.href="http://localhost:8889/detail.html"
+            window.location.href = "../detail.html"
         },
         error: (xhr, status, error) => {
             // 处理 AJAX 请求失败的情况
@@ -114,3 +140,11 @@ function search() {
         }
     })
 }
+
+// 从 URL 中获取查询参数
+function getQueryParam(parameterName) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(parameterName);
+}
+
