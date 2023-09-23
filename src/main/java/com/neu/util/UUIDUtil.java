@@ -2,6 +2,9 @@ package com.neu.util;
 
 import java.util.UUID;
 
+/**
+ * 获取UUID的工具类
+ */
 public class UUIDUtil {
 
     //获取一个UUID

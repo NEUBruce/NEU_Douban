@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 电影推荐功能
+ */
 @WebServlet("/movieRecommendServlet")
 public class MovieRecommendServlet extends HttpServlet {
     MovieService movieService = new MovieService();

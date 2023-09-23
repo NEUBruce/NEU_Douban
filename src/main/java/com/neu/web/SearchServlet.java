@@ -16,6 +16,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 搜索功能
+ */
 @WebServlet("/search")
 public class SearchServlet extends HttpServlet {
     private MovieService movieService=new MovieService();

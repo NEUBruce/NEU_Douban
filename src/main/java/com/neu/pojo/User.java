@@ -5,20 +5,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class User {
-    private Long userId;
-    private String username;
+    private Long userId;//用户id
+    private String username;//用户名称
 
-    private String password;
+    private String password;//密码
 
-    private String gender;
+    private String gender;//性别
 
-    private String vocation;
+    private String vocation;//职业
 
-    private String zipCode;
+    private String zipCode;//邮编
 
-    private Integer age;
+    private Integer age;//年龄
 
-    private List<User> friends;
+    private List<User> friends;//关注好友
 
     private List<Integer> frequency= Arrays.asList(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 

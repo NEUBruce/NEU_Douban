@@ -11,6 +11,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 好友推荐
+ */
 @WebServlet("/friendRecommendServlet")
 public class FriendRecommendServlet extends HttpServlet {
     UserService userService = new UserService();

@@ -17,6 +17,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 增加关注好友
+ */
 @WebServlet("/addFriends")
 public class AddFriendsServlet extends HttpServlet{
     private UserService userService = new UserService();

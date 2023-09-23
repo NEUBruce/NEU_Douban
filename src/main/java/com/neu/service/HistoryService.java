@@ -13,6 +13,8 @@ import java.util.List;
 
 public class HistoryService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+
+    //增添历史记录
     public int addHistory(History history) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         history.setTimestamp(new Date().getTime());
@@ -24,6 +26,7 @@ public class HistoryService {
 
     }
 
+    //查询最近的100个历史记录
     public List<History> recent100(History history) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         HistoryMapper mapper = sqlSession.getMapper(HistoryMapper.class);

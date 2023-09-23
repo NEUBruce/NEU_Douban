@@ -11,6 +11,8 @@ import java.util.List;
 
 public class RatingService {
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+
+    //增加打分记录
     public void addRating(Rating rating) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         RatingMapper mapper = sqlSession.getMapper(RatingMapper.class);
@@ -18,6 +20,7 @@ public class RatingService {
         sqlSession.close();
     }
 
+    //通过userID搜索打分记录
     public List<Rating> selectRatingByUserId(Rating rating) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         RatingMapper mapper = sqlSession.getMapper(RatingMapper.class);

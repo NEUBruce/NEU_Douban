@@ -3,6 +3,9 @@ package com.neu.util;
 
 import java.sql.*;
 
+/**
+ * 数据库连接
+ */
 public class ConnectToMySQL {
 	
 	private static Connection conn = null;

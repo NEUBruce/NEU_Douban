@@ -24,7 +24,9 @@ public interface MovieMapper {
     //搜索电影
     List<Movie> searchMovie(String searchMessage);
 
+    //计算电影平均得分
     double calculateAverageRating(Movie movie);
 
+    //获取得分前100的电影列表集合
     List<Movie> top100Movie();
 }

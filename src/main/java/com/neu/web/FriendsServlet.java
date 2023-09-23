@@ -15,6 +15,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 获取所有关注好友列表
+ */
 @WebServlet("/friends")
 public class FriendsServlet extends HttpServlet {
 
