@@ -15,6 +15,9 @@ import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+/**
+ * 注册功能
+ */
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
     UserService userService = new UserService();

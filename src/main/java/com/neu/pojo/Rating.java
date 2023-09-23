@@ -1,10 +1,10 @@
 package com.neu.pojo;
 
 public class Rating {
-	private long userId;
-	private long movieId;
-	private int rating;
-	private int timestamp;
+	private long userId;//用户id
+	private long movieId;//电影id
+	private int rating;//用户给电影的打分
+	private int timestamp;//时间戳
 
 	public Rating(long userId, long movieId, int rating, int timestamp) {
 		this.userId = userId;

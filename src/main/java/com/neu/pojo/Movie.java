@@ -8,14 +8,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Movie {
-	private Long id;
-	private String name;
-	private String year;
-	private List<String> type;
-
-	private String typeInfo;
-
-	private double rate;
+	private Long id;//电影id
+	private String name;//电影名称
+	private String year;//电影上映年份
+	private List<String> type;//电影类型（List<String>形式）
+	private String typeInfo;//电影类型（String形式）
+	private double rate;//电影得分
 
 	public Movie() {
 	}

@@ -7,6 +7,9 @@ import com.neu.service.RatingService;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 计算电影平均得分
+ */
 public class CalculateAverageRating {
     private RatingService ratingService = new RatingService();
     private MovieService movieService = new MovieService();

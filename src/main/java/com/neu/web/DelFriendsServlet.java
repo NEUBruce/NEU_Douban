@@ -17,6 +17,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 删除关注好友
+ */
 @WebServlet("/delFriends")
 public class DelFriendsServlet extends HttpServlet{
     private UserService userService = new UserService();

@@ -2,6 +2,9 @@ package com.neu.util;
 
 import java.util.Collection;
 
+/**
+ * 处理字符串的工具类
+ */
 public class StringUtil {
 	public static String connectString(Collection<String> stringList,
 			String split) {

@@ -7,6 +7,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+/**
+ * 数据库相关工具类
+ */
 public class DataBaseUtil {
 	private static DataSource ds;
 
