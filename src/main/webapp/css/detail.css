@@ -1,23 +1,8 @@
 body{
-    /*background-color: rgb(240,240,240);*/
-    /*zoom: 0.75;*/
     background-color: rgb(245, 245, 245);
 }
-.detail h1{
-    color: #3d3d3d;
-}
-.search-container h1{
-    color: #3d3d3d;
-}
-.detail h2{
-    /*border: 2px solid #000;*/
-    color: #3d3d3d;
-}
-.content-container{
-    /*background-color: rgb(240,240,240);*/
-    display: flex;
-    flex-direction: row;
-}
+
+/* search function part*/
 .search-container{
     background-color: rgba(160, 203, 213,0.6);
     height: 150px;
@@ -62,6 +47,17 @@ body{
     background-size: contain; /* 根据按钮大小自适应背景图片尺寸 */
     background-repeat: no-repeat; /* 防止图片重复平铺 */
 }
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+}
+.detail h1{
+    color: #3d3d3d;
+}
+.detail h2{
+    color: #3d3d3d;
+}
 .movie-photo{
     /*border: 2px solid #000;*/
     max-height: 450px;
@@ -69,10 +65,6 @@ body{
     margin-left: 140px;
     margin-top: 80px;
     margin-right: 100px;
-
-    /* 其他样式 */
-    /*border-right: 20px solid #333; !* 20px 宽度的黑色边框在图像右侧 *!*/
-
 }
 
 .fenge{
@@ -89,26 +81,19 @@ body{
 }
 
 .container-average{
-    /*border: 2px solid #000;*/
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    /*margin-right: 10px;*/
 }
-/*.rank{*/
-/*    border: 2px solid #000;*/
-/*}*/
-/*.star-container1{*/
-/*    border: 2px solid #000;*/
-/*}*/
+
 .average-score{
     font-family: "Book Antiqua";
     font-size: 20px;
     margin-top: 20px;
     margin-left: 10px;
 }
-/*border: 2px solid #000;*/
+
 /*star*/
 .star-wrapper {
     font-size: 1.2ee;

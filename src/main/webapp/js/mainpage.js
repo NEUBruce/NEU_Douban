@@ -3,12 +3,17 @@ window.onload = function() {
     friendRecommend();
 }
 let friends=[]
+
+/*
+* Subscribe or Cancel button listener
+* */
 function addFriendListener(){
     const buttons = document.getElementsByClassName('add-button');
     let isToggled = false;
 
     Array.from(buttons).forEach(function(button,index) {
         button.addEventListener('click', () => {
+            //cancel subscribe
             if (isToggled) {
                 button.style.backgroundColor = "rgb(31, 185, 206)"; // 恢复原始颜色
                 button.textContent = 'Subscribe'; // 恢复原始文本
@@ -32,6 +37,7 @@ function addFriendListener(){
                     }
                 })
             } else {
+                //subscribe
                 button.style.backgroundColor = 'rgb(241,116,116)'; // 设置为红色背景
                 button.textContent = 'Cancel'; // 设置文本为 "Cancel"
                 $.ajax({
@@ -59,6 +65,9 @@ function addFriendListener(){
 
 }
 
+/*
+* get the recommendation of friends
+* */
 function friendRecommend(){
 
     $.ajax({

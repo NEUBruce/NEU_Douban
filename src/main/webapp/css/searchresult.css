@@ -1,19 +1,16 @@
 body{
-    /*zoom: 0.75;*/
     background-color: rgb(245, 245, 245);
 }
+/* search function part */
 .search-container h1{
     color: #414141;
 }
-.inactive {
-    display: none;
-}
+
 .search-container{
     background-color: rgba(160, 203, 213,0.6);
     height: 150px;
     display: flex;
     flex-direction: row;
-    /*justify-content: center; !* 水平居中对齐 *!*/
     align-items: center;
 }
 .search-container h1{
@@ -26,18 +23,15 @@ body{
     border: 1px solid #ccc;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    /*transition: border-color 0.3s;*/
     height: 42px;
     width: 600px;
     font-family: Arial;
     font-size: medium;
-    /*padding: 0px 50px 0px 0px;*/
     text-indent: 20px;
 }
 
 .search-button1{
     background-image: url("../image/search.png");
-    /*background-color: #000000;*/
     height: 42px;
     width: 42px;
     border-bottom-right-radius: 20px;
@@ -46,16 +40,16 @@ body{
     border-right: 0px;
     border-top: 0px;
     border-bottom: 0px;
-    background-size: cover; /* 根据按钮大小自适应背景图片尺寸 */
-    background-repeat: no-repeat; /* 防止图片重复平铺 */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+
+/* result part */
 .content-container{
-    /*background-color: rgb(240,240,240);*/
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    /*align-self: center;*/
 }
 .result{
     background-color: #fff;
@@ -82,48 +76,42 @@ body{
     display: flex;
     flex-direction: column;
     margin-left: 90px;
-    /*padding: -10px 0px 0px -10px;*/
 }
-/*.detail > * {*/
-/*    margin: 0;*/
-/*}*/
 .rank-box{
-    /*border: 2px solid #000;*/
     display: flex;
     flex-direction: row;
     align-items: center;
-    /*justify-items: flex-start;*/
     justify-content: flex-start;
     padding: 0;
     margin: 0;
 }
-/*.rank-box h3{*/
-/*    border: 2px solid #000;*/
-/*}*/
+
 .movie-name{
     margin-top: 27px;
     margin-bottom: 0;
 }
 
 .time{
-    /*border: 2px solid #000;*/
     margin: 0;
 }
 .category{
-    /*border: 2px solid #000;*/
     margin-top: 15px;
 }
+
+
+/* star part */
 .fa-star {
-    /*border: 2px solid #000;*/
     margin-left: 3px;
     margin-top: 5px;
     font-size: 1.2em;
     color: #ffd700;
 }
-
 a {
     text-decoration: none; /* 移除下划线 */
     color: inherit; /* 继承父元素的字体颜色 */
+}
+.inactive {
+    display: none;
 }
 
 /* 在超链接被点击后不改变颜色 */

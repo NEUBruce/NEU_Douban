@@ -1,5 +1,4 @@
 body {
-    /*zoom: 0.75;*/
     font-family: "宋体", Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -9,19 +8,17 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    /*background-image: url("../image/background1.jpg"); !* 设置背景图片的URL *!*/
-    /*background-color: rgba(255, 255, 255, 0.6); !* 设置半透明白色背景 *!*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .content-container {
-    order: 2; /* 设置内容容器在标题下方 */
+    order: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* 添加上方间距 */
+    margin-top: 20px;
     margin-left: 20px;
     flex-direction: column;
     width: 100%;
@@ -31,14 +28,13 @@ body {
 .header {
     font-family: "华文新魏";
     position: relative;
-    /*top: 80px;*/
     text-align: center;
     color: rgb(31, 185, 206);
     padding: 20px 0;
     font-size: 50px;
     font-weight: bolder;
-    width: 100%; /* 让标题横向充满页面 */
-    order: 1; /* 设置标题在页面最上方 */
+    width: 100%;
+    order: 1;
     margin-bottom: 20px;
 }
 

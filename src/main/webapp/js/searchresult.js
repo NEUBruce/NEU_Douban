@@ -17,12 +17,3 @@ function search() {
         }
     })
 }
-
-function starSet(){
-    let starContainer = document.querySelectorAll(".star-container");
-    for (let i = 0; i <= end; i++) {
-            starContainer[i].classList.add("active");
-            starContainer[i].classList.remove("inactive");
-            starContainer[i].firstElementChild.className = "fa-star fa-solid";
-    }
-}

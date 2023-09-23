@@ -1,5 +1,8 @@
 let movies = []
 
+/*
+* get the recommendation of movies
+* */
 function movie_recommend(){
 
     $.ajax({
@@ -23,7 +26,9 @@ function movie_recommend(){
 }
 
 
-
+/*
+* search function of main page
+* */
 function search() {
     var searchMessage = document.getElementById("search").value;
 
@@ -44,6 +49,9 @@ function search() {
     })
 }
 
+/*
+* click and change to the detail page
+* */
 function clickChange(){
     const moviePosters = document.getElementsByClassName('movie');
 
@@ -53,7 +61,6 @@ function clickChange(){
     Array.from(moviePosters).forEach(function(moviePoster,index) {
         moviePoster.addEventListener('click', function() {
             // 在点击时跳转到详细信息页
-            // console.log("to detail: "+data);
             let jsonObj = JSON.stringify(movies[index]);
             window.location.href  = detailedPageUrl+"?movie=" + encodeURIComponent(jsonObj);
         });

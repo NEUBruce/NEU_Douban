@@ -38,10 +38,6 @@ header h1 {
 
 }
 
-/* 为悬停时的导航栏链接添加蓝色背景颜色 */
-.navbar a:hover{
-    background-color: #00b2ff;
-}
 #personal-center{
     /*border: 2px solid #000;*/
     background-image: url("../image/center.png");
@@ -58,7 +54,6 @@ header h1 {
 }
 
 #search{
-
     width: 200px;
     padding: 10px 0px;
     margin-left: 330px;
@@ -66,17 +61,14 @@ header h1 {
     border: 1px solid #ccc;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
-    /*border-top-right-radius: 5px; !* 圆化左上角 *!*/
-    /*border-bottom-right-radius: 5px; !* 圆化左下角 *!*/
     transition: border-color 0.3s;
     text-indent: 7px;
 }
+
 .search-button{
     padding: 13px 0px;
     margin-left: -5px;
     background-image: url("../image/search.png");
-    /*border: 2px solid #000;*/
-    /*background-color: #818181;*/
     height: 37px;
     width: 37px;
     border-bottom-right-radius: 5px;
@@ -87,6 +79,11 @@ header h1 {
     border-bottom: 1px solid #ccc;
     background-size: contain; /* 根据按钮大小自适应背景图片尺寸 */
     background-repeat: no-repeat; /* 防止图片重复平铺 */
+}
+
+/* 为悬停时的导航栏链接添加蓝色背景颜色 */
+.navbar a:hover{
+    background-color: #00b2ff;
 }
 
 nav ul {
@@ -117,72 +114,3 @@ footer {
     padding: 10px;
     text-align: center;
 }
-
-
-
-
-
-
-
-/*!* 下拉容器 *!*/
-/*.dropdown {*/
-/*    float: right;*/
-/*    overflow: hidden;*/
-/*    !*height: 60px;*!*/
-/*}*/
-
-/*!* 下拉按钮 *!*/
-/*.dropdown .dropbtn {*/
-/*    font-size: 20px;*/
-/*    border: none;*/
-/*    outline: none;*/
-/*    color: white;*/
-/*    padding: 14px 16px;*/
-/*    background-color: inherit;*/
-/*    font-family: inherit; !* 对手机垂直对齐很重要 *!*/
-/*    margin: 0; !* 对手机垂直对齐很重要 *!*/
-/*}*/
-
-
-/*!* 下拉内容（默认隐藏）*!*/
-/*.dropdown-content {*/
-/*    font-size: 16px;*/
-/*    display: none;*/
-/*    position: absolute;*/
-/*    background-color: #f9f9f9;*/
-/*    min-width: 160px;*/
-/*    box-shadow: 0px 8px 16px 0px;color: rgb(31, 185, 206);*/
-/*    z-index: 1;*/
-/*}*/
-
-/*!* 下拉列表中的链接 *!*/
-/*.dropdown-content a {*/
-/*    float: none;*/
-/*    color: black;*/
-/*    padding: 12px 16px;*/
-/*    text-decoration: none;*/
-/*    display: block;*/
-/*    text-align: right;*/
-/*}*/
-
-/*!* 为悬停时的下拉链接添加灰色背景颜色 *!*/
-/*.dropdown-content a:hover {*/
-/*    background-color: #ddd;*/
-/*}*/
-
-/*!* 悬停时显示下拉菜单 *!*/
-/*.dropdown:hover .dropdown-content {*/
-/*    display: block;*/
-/*}*/
-
-/*#search-image{*/
-/*    !*background-size: contain; !* 根据按钮大小自适应背景图片尺寸 *!*!*/
-/*    !*background-repeat: no-repeat; !* 防止图片重复平铺 *!*!*/
-/*    !*background-color: #fff;*!*/
-/*    margin-top: 8px;*/
-/*    margin-left: 300px;*/
-/*    height: 30px;*/
-/*    width: 30px;*/
-/*    border-top-left-radius: 5px; !* 圆化左上角 *!*/
-/*    border-bottom-left-radius: 5px; !* 圆化左下角 *!*/
-/*}*/

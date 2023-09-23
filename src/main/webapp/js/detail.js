@@ -18,19 +18,18 @@ window.onload = function () {
 
 }
 
+/*
+* show the detail Info of movie clicked
+* */
 function loadMovieInfo() {
-    console.log("enter1")
-    // starRank();
-    // buttonSubmit();
-    let currentUrl = window.location.href;
-
-// 从 URL 中解析出参数
+    // 从 URL 中解析出参数
     let urlParams = new URLSearchParams(window.location.search);
     let movie = urlParams.get('movie');
     movie = JSON.parse(decodeURIComponent(movie));
     console.log(movie);
     movieInfo = movie;
 
+    //set value of movie
     $("#movie-name").text(movie.name);
     $("#time").text("Released Time: " + movie.year);
     let category = "";
@@ -39,16 +38,19 @@ function loadMovieInfo() {
     }
     $("#category").text("Category: " + movie.typeInfo);
     $("#average-score").text(movie.rate)
-    //rate
+
+    //set the rating of movie
     if(movie.rate !== 0 && movie.rate !== null){
         starRank();
     }
+    //submit rating function
     buttonSubmit();
 }
 
 
-//star show
-
+/*
+* movie's rating score --> star
+* */
 function starRank(){
     //movie's rank
     $("#average-score").text(movieInfo.rate);
@@ -66,13 +68,15 @@ function starRank(){
     }
 };
 
+/*
+* submit the rating score
+* */
 function buttonSubmit(movie) {
     // 获取用户信息
     var userInfoElement = document.getElementById('user-info');
     var userJson = userInfoElement.getAttribute('data-user');
     var user = JSON.parse(userJson);
 
-function buttonSubmit(){
     console.log("button enter")
     let starContainer1 = document.querySelectorAll(".star-container1");
     let button = document.getElementById("submit");
@@ -119,6 +123,9 @@ function buttonSubmit(){
     });
 }
 
+/*
+* search function
+* */
 function search() {
     var searchMessage = document.getElementById("search-text").value;
 
@@ -139,7 +146,10 @@ function search() {
     })
 }
 
-// 从 URL 中获取查询参数
+
+/*
+* 从 URL 中获取查询参数
+* */
 function getQueryParam(parameterName) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
