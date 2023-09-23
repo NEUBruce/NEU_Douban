@@ -19,6 +19,7 @@ public class MovieService {
     private UserCFRecommender userCFRecommender = new UserCFRecommender();
     private RatingService ratingService = new RatingService();
 
+    //获取所有movie
     public List<Movie> selectAllMovie() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -28,6 +29,7 @@ public class MovieService {
         return movieList;
     }
 
+    //通过movieId搜索movie
     public Movie selectMovieById(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -37,6 +39,7 @@ public class MovieService {
         return selectMovie;
     }
 
+    //增加movie
     public int addMovie(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -46,6 +49,7 @@ public class MovieService {
         return result;
     }
 
+    //修改movie
     public int modifyMovie(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -55,6 +59,7 @@ public class MovieService {
         return result;
     }
 
+    //删除movie
     public int deleteMovieById(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -64,6 +69,7 @@ public class MovieService {
         return result;
     }
 
+    //搜索功能
     public List<Movie> searchMovie(String searchMessage){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -73,6 +79,7 @@ public class MovieService {
         return movieList;
     }
 
+    //计算movie的平均得分
     public double calculateAverageRating(Movie movie){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -81,6 +88,7 @@ public class MovieService {
         return avg;
     }
 
+    //得到排名前100的movie
     public List<Movie> top100Movies() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
@@ -89,6 +97,7 @@ public class MovieService {
         return movies;
     }
 
+    //获取推荐movie的列表
     public List<Movie> recommendMovie(User user, int size) {
         //检测是否冷启动
         MixedRecommender recommender = new MixedRecommender(user);

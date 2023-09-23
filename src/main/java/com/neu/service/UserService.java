@@ -24,6 +24,7 @@ public class UserService {
 
     private SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
+    //获取到所有User
     public List<User> selectAllUser() {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -37,6 +38,7 @@ public class UserService {
         return null;
     }
 
+    //通过id搜索User
     public List<User> selectUserById(User user) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -45,6 +47,7 @@ public class UserService {
         return userList;
     }
 
+    //通过username搜索User
     public User selectUserByName(User user){
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -58,6 +61,7 @@ public class UserService {
         return null;
     }
 
+    //通过username和password搜索User
     public User selectUserByNameAndPassword(User user){
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -71,6 +75,7 @@ public class UserService {
         return null;
     }
 
+    //增加User
     public int insertUser(User user) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -85,6 +90,7 @@ public class UserService {
         return 0;
     }
 
+    //修改User信息
     public int modifyUser(User user){
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -98,6 +104,7 @@ public class UserService {
         return 0;
     }
 
+    //删除User
     //删除用户
     public int deleteUserByName(User user){
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
@@ -153,6 +160,8 @@ public class UserService {
         }
         return 0;
     }
+
+    //获取推荐User列表
     public List<User> recommendUsers(Long userId, int size) {
         try {
             DataModel model = DataModelUtil.getPreferenceDataModel();//构造数据模型
