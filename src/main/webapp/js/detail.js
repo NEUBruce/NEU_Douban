@@ -71,11 +71,8 @@ function starRank(){
 /*
 * submit the rating score
 * */
-function buttonSubmit(movie) {
+function buttonSubmit() {
     // 获取用户信息
-    var userInfoElement = document.getElementById('user-info');
-    var userJson = userInfoElement.getAttribute('data-user');
-    var user = JSON.parse(userJson);
 
     console.log("button enter")
     let starContainer1 = document.querySelectorAll(".star-container1");
@@ -97,27 +94,17 @@ function buttonSubmit(movie) {
             }
         }
 
+        console.log("rank: " + rank)
         $.ajax({
             url: "http://localhost:8080/rating",
             method: "post",
             data: JSON.stringify({
-                userId: userId,
-                movieId: movieId,
-                rank: rank,
-                timestamp: timestamp,
+                movieId: movieInfo.id,
+                rating: rank
             }),
             contentType: "application/json",
-            data: {
-                // movieID: movieInfo.id,
-                movieID: 2,
-                rating: rank
-            },
             success: (data) => {
                 alert("Submit Success!");
-                console.log(rank)
-            },
-            error: (xhr, status, error) => {
-                alert("Error: " + error);
             }
         })
     });

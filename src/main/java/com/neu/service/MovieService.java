@@ -104,4 +104,14 @@ public class MovieService {
 
         return recommender.recommend();
     }
+
+    public void updateMovieRate(Movie movie) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        MovieMapper mapper = sqlSession.getMapper(MovieMapper.class);
+        movie = mapper.selectMovieById(movie);
+        double rate = mapper.calculateAverageRating(movie);
+        movie.setRate(rate);
+        mapper.modifyMovie(movie);
+        sqlSession.close();
+    }
 }

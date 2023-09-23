@@ -66,7 +66,7 @@ public class ImportRatings {
 				ps.setLong(1, rating.getUserId());
 				ps.setLong(2, rating.getMovieId());
 				ps.setInt(3, rating.getRating());
-				ps.setInt(4, rating.getTimestamp());
+				ps.setLong(4, rating.getTimestamp());
 				ps.addBatch();
 			}
 

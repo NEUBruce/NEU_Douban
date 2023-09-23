@@ -16,12 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
-import java.util.List;
 
-@WebServlet("/rating")
-public class RatingServlet extends HttpServlet {
+@WebServlet("/click")
+public class ClickServlet extends HttpServlet {
     private RatingService ratingService = new RatingService();
     private ObjectMapper objectMapper = new ObjectMapper(); // 初始化ObjectMapper
 

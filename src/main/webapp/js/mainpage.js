@@ -82,7 +82,7 @@ function friendRecommend(){
             for (let i = 1; i <= 4; i++) {
                 let friend = data[i - 1];
 
-                $("#person-label-" + i).text(friend.age);
+                $("#person-label-" + i).text(friend.userId);
                 // console.log("#person-label-" + i)
                 // console.log(friend.age+"\n")
             }

@@ -166,7 +166,7 @@ public class UserService {
         try {
             DataModel model = DataModelUtil.getPreferenceDataModel();//构造数据模型
             UserSimilarity similarity = new UncenteredCosineSimilarity(model);//用PearsonCorrelation 算法计算用户相似度
-            UserNeighborhood neighborhood = new NearestNUserNeighborhood(size, similarity, model);//计算用户的“邻居”，这里将与该用户最近距离为 3 的用户设置为该用户的“邻居”。
+            UserNeighborhood neighborhood = new NearestNUserNeighborhood(size, similarity, model);//计算用户的“邻居”
             long[] neighbors = neighborhood.getUserNeighborhood(userId);
 
             List<User> users = new ArrayList<>();
@@ -175,7 +175,6 @@ public class UserService {
                 user.setUserId(id);
                 users.add(selectUserById(user).get(0));
             }
-            System.out.println(users);
 
             return users;
 

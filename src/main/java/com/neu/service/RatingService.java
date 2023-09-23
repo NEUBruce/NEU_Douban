@@ -17,6 +17,7 @@ public class RatingService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         RatingMapper mapper = sqlSession.getMapper(RatingMapper.class);
         mapper.addRating(rating);
+        sqlSession.commit();
         sqlSession.close();
     }
 

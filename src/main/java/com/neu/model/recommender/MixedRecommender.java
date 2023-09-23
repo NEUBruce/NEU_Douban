@@ -33,7 +33,6 @@ public class MixedRecommender {
             List<RecommendedItem> userRecommend = userCFRecommender.getUserCFRecommender(currentUser.getUserId(), 50);
             // List<RecommendedItem> itemRecommend = itemCFRecommender.getItemCFRecommender(currentUser.getUserId(), 50);
 
-            System.out.println(userRecommend);
             //System.out.println(itemRecommend);
             List<Movie> movies = new ArrayList<>();
 
@@ -50,12 +49,7 @@ public class MixedRecommender {
                 Movie movie = new Movie();
                 movie.setId(id);
                 movie = movieService.selectMovieById(movie);
-                for(int i = 0; i < movies.size(); i++) {
-                    if (movies.get(i).getId() != movie.getId()) {
-                        movies.add(movie);
-                    }
-                }
-
+                movies.add(movie);
             }
 
             return movies;

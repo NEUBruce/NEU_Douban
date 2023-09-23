@@ -26,7 +26,7 @@ public class HistoryService {
 
     }
 
-    //查询最近的100个历史记录
+    //查询最近的100个推荐记录
     public List<History> recent100(History history) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         HistoryMapper mapper = sqlSession.getMapper(HistoryMapper.class);

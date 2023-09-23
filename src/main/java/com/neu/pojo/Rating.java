@@ -4,9 +4,9 @@ public class Rating {
 	private long userId;//用户id
 	private long movieId;//电影id
 	private int rating;//用户给电影的打分
-	private int timestamp;//时间戳
+	private long timestamp;//时间戳
 
-	public Rating(long userId, long movieId, int rating, int timestamp) {
+	public Rating(long userId, long movieId, int rating, long timestamp) {
 		this.userId = userId;
 		this.movieId = movieId;
 		this.rating = rating;
@@ -40,11 +40,11 @@ public class Rating {
 		this.rating = rating;
 	}
 
-	public int getTimestamp() {
-		return this.timestamp;
+	public long getTimestamp() {
+		return timestamp;
 	}
 
-	public void setTimestamp(int timestamp) {
+	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
 	}
 }

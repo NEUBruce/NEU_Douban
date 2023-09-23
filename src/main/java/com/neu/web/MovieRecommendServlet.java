@@ -79,7 +79,6 @@ public class MovieRecommendServlet extends HttpServlet {
 
         movies = selectedElements;
 
-
         response.setContentType("application/json");
 
         String responseData = JSON.toJSONString(movies);
