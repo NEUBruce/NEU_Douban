@@ -45,6 +45,11 @@ body{
     font-family: "Book Antiqua";
     /*border: 2px solid #000;*/
 }
+.movie-type{
+    font-family: "Book Antiqua";
+    color: rgb(27, 167, 187);
+    margin: 7px 0px;
+}
 #movies{
     /*border: 2px solid #000;*/
     display: flex;
@@ -75,12 +80,14 @@ body{
     box-sizing: border-box;
     margin-right: 30px;
     margin-left: 0px;
+    margin-top: 10px;
 }
 /* change a batch button pic*/
 #next-image{
     height: 12px;
     width: 12px;
-    margin: 0px;
+    margin: 20px 0px 0px 0px;
+
 }
 
 #movies:hover .movie{
